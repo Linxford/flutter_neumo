@@ -198,7 +198,7 @@ class NeumoCheckbox extends StatelessWidget {
         shape: NeumoShape.flat,
       ),
       child: Icon(
-        NeumoIcons.check,
+        NeumophicIcons.check,
         color: iconColor,
         size: 20.0,
       ),

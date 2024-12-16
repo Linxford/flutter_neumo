@@ -6,8 +6,8 @@ version: 0.0.1
 #  Olivier Bonvila <olivier.bonvila@idean.com>,
 #  Gyl Jean Lambert <almighty972@gmail.com>
 #]
-homepage: https://github.com/Idean/Flutter-Neumorphic
-issue_tracker: https://github.com/Idean/Flutter-Neumorphic/issues
+homepage: https://github.com/linxford/Flutter_Neumo
+issue_tracker: https://github.com/linxford/Flutter_Neumo/issues
 
 environment:
   sdk: ^3.5.3
