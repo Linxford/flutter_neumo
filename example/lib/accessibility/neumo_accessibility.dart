@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class NeumoAccessibility extends StatefulWidget {
+  const NeumoAccessibility({super.key});
+
   @override
   State<NeumoAccessibility> createState() => _NeumoAccessibilityState();
 }
@@ -66,14 +68,16 @@ class _NeumoAccessibilityState extends State<NeumoAccessibility> {
 
   Widget _buildBackButton() {
     return Padding(
-      padding: EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8.0),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
           backgroundColor: theme.colorScheme.primary,
         ),
         onPressed: () => Navigator.pop(context),
-        child: Text('Back', style: TextStyle(color: theme.colorScheme.onPrimary)),
+        child:
+            Text('Back', style: TextStyle(color: theme.colorScheme.onPrimary)),
       ),
     );
   }
@@ -94,7 +98,9 @@ class _NeumoAccessibilityState extends State<NeumoAccessibility> {
               blurRadius: depth,
             ),
           ],
-          border: borderWidth > 0 ? Border.all(color: borderColor, width: borderWidth) : null,
+          border: borderWidth > 0
+              ? Border.all(color: borderColor, width: borderWidth)
+              : null,
         ),
       ),
     );
@@ -114,7 +120,7 @@ class _NeumoAccessibilityState extends State<NeumoAccessibility> {
 
   Widget _buildConfigurators() {
     return Card(
-      margin: EdgeInsets.all(8),
+      margin: const EdgeInsets.all(8),
       elevation: 12,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       color: Colors.grey[300],
@@ -144,14 +150,18 @@ class _NeumoAccessibilityState extends State<NeumoAccessibility> {
         padding: const EdgeInsets.all(8.0),
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-            backgroundColor: isSelected ? theme.colorScheme.primary : Colors.white,
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+            backgroundColor:
+                isSelected ? theme.colorScheme.primary : Colors.white,
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
           ),
           onPressed: () => setState(() => selectedConfiguratorIndex = index),
           child: Text(
             label,
             style: TextStyle(
-              color: isSelected ? theme.colorScheme.onPrimary : Colors.black.withOpacity(0.3),
+              color: isSelected
+                  ? theme.colorScheme.onPrimary
+                  : Colors.black.withOpacity(0.3),
             ),
           ),
         ),
@@ -168,16 +178,19 @@ class _NeumoAccessibilityState extends State<NeumoAccessibility> {
       case 2:
         return _borderCustomizer();
       default:
-        return SizedBox();
+        return const SizedBox();
     }
   }
 
   Widget _styleCustomizer() {
     return Column(
       children: [
-        _slider('Depth', depth, 0, 10, (value) => setState(() => depth = value)),
-        _slider('Intensity', intensity, 0, 1, (value) => setState(() => intensity = value)),
-        _slider('Surface Intensity', surfaceIntensity, 0, 1, (value) => setState(() => surfaceIntensity = value)),
+        _slider(
+            'Depth', depth, 0, 10, (value) => setState(() => depth = value)),
+        _slider('Intensity', intensity, 0, 1,
+            (value) => setState(() => intensity = value)),
+        _slider('Surface Intensity', surfaceIntensity, 0, 1,
+            (value) => setState(() => surfaceIntensity = value)),
       ],
     );
   }
@@ -186,8 +199,8 @@ class _NeumoAccessibilityState extends State<NeumoAccessibility> {
     return Column(
       children: [
         _slider('Corner Radius', borderRadius.topLeft.x, 0, 30, (value) {
-          setState(() {
-                  }),
+          setState(() {});
+        }),
         _shapeSelector(),
         _sizeSelector(),
       ],
@@ -197,17 +210,20 @@ class _NeumoAccessibilityState extends State<NeumoAccessibility> {
   Widget _borderCustomizer() {
     return Column(
       children: [
-        _colorPicker('Border Color', borderColor, (color) => setState(() => borderColor = color)),
-        _slider('Border Width', borderWidth, 0, 10, (value) => setState(() => borderWidth = value)),
+        _colorPicker('Border Color', borderColor,
+            (color) => setState(() => borderColor = color)),
+        _slider('Border Width', borderWidth, 0, 10,
+            (value) => setState(() => borderWidth = value)),
       ],
     );
   }
 
-  Widget _slider(String label, double value, double min, double max, Function(double) onChanged) {
+  Widget _slider(String label, double value, double min, double max,
+      Function(double) onChanged) {
     return Row(
       children: [
         Padding(
-          padding: EdgeInsets.only(left: 12),
+          padding: const EdgeInsets.only(left: 12),
           child: Text(label),
         ),
         Expanded(
@@ -219,7 +235,7 @@ class _NeumoAccessibilityState extends State<NeumoAccessibility> {
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(right: 12),
+          padding: const EdgeInsets.only(right: 12),
           child: Text(value.floor().toString()),
         ),
       ],
@@ -230,13 +246,14 @@ class _NeumoAccessibilityState extends State<NeumoAccessibility> {
     return Row(
       children: [
         Padding(
-          padding: EdgeInsets.only(left: 12),
+          padding: const EdgeInsets.only(left: 12),
           child: Text(label),
         ),
         Expanded(
           child: ColorPicker(
             color: color,
             onColorChanged: onChanged,
+            pickerColor: color,
           ),
         ),
       ],
@@ -259,14 +276,18 @@ class _NeumoAccessibilityState extends State<NeumoAccessibility> {
         padding: const EdgeInsets.all(8.0),
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-            backgroundColor: shape == shapeType ? theme.colorScheme.primary : Colors.white,
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+            backgroundColor:
+                shape == shapeType ? theme.colorScheme.primary : Colors.white,
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
           ),
           onPressed: () => setState(() => shape = shapeType),
           child: Text(
             label,
             style: TextStyle(
-              color: shape == shapeType ? theme.colorScheme.onPrimary : Colors.black.withOpacity(0.3),
+              color: shape == shapeType
+                  ? theme.colorScheme.onPrimary
+                  : Colors.black.withOpacity(0.3),
             ),
           ),
         ),
@@ -277,7 +298,7 @@ class _NeumoAccessibilityState extends State<NeumoAccessibility> {
   Widget _sizeSelector() {
     return Row(
       children: [
-        Padding(
+        const Padding(
           padding: EdgeInsets.only(left: 12),
           child: Text("W: "),
         ),
@@ -289,7 +310,7 @@ class _NeumoAccessibilityState extends State<NeumoAccessibility> {
             onChanged: (value) => setState(() => width = value),
           ),
         ),
-        Padding(
+        const Padding(
           padding: EdgeInsets.only(right: 12),
           child: Text("H: "),
         ),
@@ -315,7 +336,8 @@ class _NeumoAccessibilityState extends State<NeumoAccessibility> {
             value: lightSource.dx,
             min: -1,
             max: 1,
-            onChanged: (value) => setState(() => lightSource = lightSource.copyWith(dx: value)),
+            onChanged: (value) =>
+                setState(() => lightSource = lightSource.copyWith(dx: value)),
           ),
         ),
         Positioned(
@@ -328,7 +350,8 @@ class _NeumoAccessibilityState extends State<NeumoAccessibility> {
               value: lightSource.dy,
               min: -1,
               max: 1,
-              onChanged: (value) => setState(() => lightSource = lightSource.copyWith(dy: value)),
+              onChanged: (value) =>
+                  setState(() => lightSource = lightSource.copyWith(dy: value)),
             ),
           ),
         ),
@@ -358,7 +381,11 @@ class ColorPicker extends StatelessWidget {
   final Color color;
   final Function(Color) onColorChanged;
 
-  ColorPicker({required this.color, required this.onColorChanged});
+  const ColorPicker(
+      {super.key,
+      required this.color,
+      required this.onColorChanged,
+      required Color pickerColor});
 
   @override
   Widget build(BuildContext context) {
@@ -368,7 +395,7 @@ class ColorPicker extends StatelessWidget {
           context: context,
           builder: (BuildContext context) {
             return AlertDialog(
-              title: Text('Pick a Color'),
+              title: const Text('Pick a Color'),
               content: SingleChildScrollView(
                 child: ColorPickerWidget(
                   pickerColor: color,
@@ -377,7 +404,7 @@ class ColorPicker extends StatelessWidget {
               ),
               actions: <Widget>[
                 TextButton(
-                  child: Text('Done'),
+                  child: const Text('Done'),
                   onPressed: () => Navigator.of(context).pop(),
                 ),
               ],
@@ -401,7 +428,8 @@ class ColorPickerWidget extends StatefulWidget {
   final Color pickerColor;
   final Function(Color) onColorChanged;
 
-  ColorPickerWidget({required this.pickerColor, required this.onColorChanged});
+  const ColorPickerWidget(
+      {super.key, required this.pickerColor, required this.onColorChanged});
 
   @override
   _ColorPickerWidgetState createState() => _ColorPickerWidgetState();
@@ -424,6 +452,7 @@ class _ColorPickerWidgetState extends State<ColorPickerWidget> {
         setState(() => _currentColor = color);
         widget.onColorChanged(color);
       },
+      color: _currentColor,
       // Additional configuration for color picker can be added here
     );
   }
