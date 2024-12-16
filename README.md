@@ -2,11 +2,11 @@
 
 A complete, ready to use, Neumo ui kit for Flutter
 
-[![flutter_logo](https://github.com/linxford/Flutter_Neumo/blob/master/medias/flutter_logo_small.gif)](https://github.com/linxford/Flutter_Neumo)
+[![flutter_logo](/medias/flutter_logo_small.gif)](https://github.com/linxford/Flutter_Neumo)
 
 Try Flutter_Neumo on your browser : 👉 https://flutter_neumo.firebaseapp.com/ 🌐
 
-[![neumo_playground](https://github.com/linxford/Flutter_Neumo/blob/master/medias/playground.gif)](https://github.com/linxford/Flutter_Neumo)
+[![neumo_playground](/medias/playground.gif)](https://github.com/linxford/Flutter_Neumo)
 
 # ⚙️ Installation
 
@@ -41,79 +41,79 @@ import 'package:flutter_neumo/flutter_neumo.dart';
 </thead>
 <tbody>
 <tr>
-  <td><img width="300px" src="https://github.com/Linxford/Flutter_Neumo/raw/master/medias/widgets/container.gif"/></td>
+  <td><img width="300px" src="/medias/widgets/container.gif"/></td>
   <td>Neumo</td>
   <td>The main Neumo Widget, a container which adds white/dark gradient depending on a lightsource and a depth </td>
 </tr>
 <tr>
-  <td><img width="300px" src="https://github.com/Linxford/Flutter_Neumo/raw/master/medias/widgets/button.gif"/></td>
+  <td><img width="300px" src="/medias/widgets/button.gif"/></td>
   <td>NeumoButton</td>
   <td>A neumo button that plays with the depth to respond to user interraction</td>
 </tr>
 <tr>
-  <td><img width="300px" src="https://github.com/Linxford/Flutter_Neumo/raw/master/medias/widgets/radio.gif"/></td>
+  <td><img width="300px" src="/medias/widgets/radio.gif"/></td>
   <td>NeumoRadio</td>
   <td>A set of neumophic button whith only one selected at time, depending on a value and groupValue</td>
 </tr>
 <tr>
-  <td><img width="300px" src="https://github.com/Linxford/Flutter_Neumo/raw/master/medias/widgets/checkbox.gif"/></td>
+  <td><img width="300px" src="/medias/widgets/checkbox.gif"/></td>
   <td>NeumoCheckbox</td>
   <td> A button associated with a value, can be checked/unckecked, if checked, takes the accent color</td>
 </tr>
 
 <tr>
-  <td><img width="300px" src="https://github.com/Linxford/Flutter_Neumo/raw/master/medias/widgets/text.png"/></td>
+  <td><img width="300px" src="/medias/widgets/text.png"/></td>
   <td>NeumoText</td>
   <td>A Neumo text (only work with positive depth)</td>
 </tr>
 <tr>
-  <td><img width="300px" src="https://github.com/Linxford/Flutter_Neumo/raw/master/medias/widgets/icon.png"/></td>
+  <td><img width="300px" src="/medias/widgets/icon.png"/></td>
   <td>NeumoIcon</td>
   <td>A Neumo icon (only work with positive depth)</td>
 </tr>
 <tr>
-  <td><img width="300px" src="https://github.com/Linxford/Flutter_Neumo/raw/master/medias/widgets/textfield.png"/></td>
+  <td><img width="300px" src="/medias/widgets/textfield.png"/></td>
   <td>material.TextField</td>
   <td>For TextFields, just surround your existing material textfield widget with a Neumo (container)</td>
 </tr>
 
 <tr>
-  <td><img width="300px" src="https://github.com/Linxford/Flutter_Neumo/raw/master/medias/widgets/switch.gif"/> </td>
+  <td><img width="300px" src="/medias/widgets/switch.gif"/> </td>
   <td>NeumoSwitch</td>
   <td>An On/Off toggle, associated with a value, if toggled, takes the accent color </td>
 </tr>
 <tr>
-  <td><img width="300px" src="https://github.com/Linxford/Flutter_Neumo/raw/master/medias/widgets/toggle.gif"/> </td>
+  <td><img width="300px" src="/medias/widgets/toggle.gif"/> </td>
   <td>NeumoToggle</td>
   <td>An mutiple value toggle, associated with a selecteedIndex</td>
 </tr>
 <tr>
-  <td><img width="300px" src="https://github.com/Linxford/Flutter_Neumo/raw/master/medias/widgets/slider.gif"/></td>
+  <td><img width="300px" src="/medias/widgets/slider.gif"/></td>
   <td>NeumoSlider</td>
   <td>A Neumo seekbar (range slider), the user can select a value in a range</td>
 </tr>
 <tr>
-  <td><img width="300px" src="https://github.com/Linxford/Flutter_Neumo/raw/master/medias/widgets/progress.gif"/></td>
+  <td><img width="300px" src="/medias/widgets/progress.gif"/></td>
   <td>NeumoProgress</td>
   <td>A determinate progress, takes the displayed percentage</td>
 </tr>
 <tr>
-  <td><img width="300px"src="https://github.com/Linxford/Flutter_Neumo/raw/master/medias/widgets/indeterminate.gif"/> </td>
+  <td><img width="300px"src="/medias/widgets/indeterminate.gif"/> </td>
   <td>NeumoProgressIndeterminate</td>
   <td>An inderminate progress-bar</td>
 </tr>
 <tr>
-  <td><img src="https://github.com/Linxford/Flutter_Neumo/raw/master/medias/widgets/background.png"/> </td>
+  <td><img src="/medias/widgets/background.png"/> </td>
   <td>NeumoBackground</td>
   <td>Take the background color of the theme, can clip the screen with a borderRadius</td>
 </tr>
 <tr>
-  <td><img width="300px" src="https://github.com/Linxford/Flutter_Neumo/raw/master/medias/widgets/background.png"/> </td>
+  <td><img width="300px" src="/medias/widgets/background.png"/> </td>
   <td>NeumoApp</td>
   <td>An application that uses Neumo design. Handle theme, navigation, localisation, and much more</td>
 </tr>
 <tr>
-  <td><img src="https://github.com/Linxford/Flutter_Neumo/raw/master/medias/widgets/app_bar.png"/> </td>
+  <td><img src="/medias/widgets/app_bar.png"/> </td>
   <td>NeumoAppBar</td>
   <td>A Neumorphhic design app bar. Can be used inside Scaffold</td>
 </tr>
@@ -123,11 +123,11 @@ import 'package:flutter_neumo/flutter_neumo.dart';
 
 ## 👀 Showcases
 
-[![Neumo](https://github.com/Linxford/Flutter_Neumo/blob/master/medias/samples/sample_form.png)](https://github.com/Linxford/Flutter_Neumo)
-[![Neumo](https://github.com/Linxford/Flutter_Neumo/blob/master/medias/samples/sample_clock.png)](https://github.com/Linxford/Flutter_Neumo)
+[![Neumo](/medias/samples/sample_form.png)](https://github.com/Linxford/Flutter_Neumo)
+[![Neumo](/medias/samples/sample_clock.png)](https://github.com/Linxford/Flutter_Neumo)
 
-[![Neumo](https://github.com/Linxford/Flutter_Neumo/blob/master/medias/samples/sample_galaxy.png)](https://github.com/Linxford/Flutter_Neumo)
-[![Neumo](https://github.com/Linxford/Flutter_Neumo/blob/master/medias/samples/sample_widgets.png)](https://github.com/Linxford/Flutter_Neumo)
+[![Neumo](/medias/samples/sample_galaxy.png)](https://github.com/Linxford/Flutter_Neumo)
+[![Neumo](/medias/samples/sample_widgets.png)](https://github.com/Linxford/Flutter_Neumo)
 
 ## 📦 Neumo
 
@@ -145,8 +145,8 @@ Neumo(
 )
 ```
 
-[![Neumo](https://github.com/Linxford/Flutter_Neumo/blob/master/medias/neumo_container.gif)](https://github.com/Linxford/Flutter_Neumo)
-[![Neumo](https://github.com/Linxford/Flutter_Neumo/blob/master/medias/neumo_circle_container.gif)](https://github.com/Linxford/Flutter_Neumo)
+[![Neumo](/medias/neumo_container.gif)](https://github.com/Linxford/Flutter_Neumo)
+[![Neumo](/medias/neumo_circle_container.gif)](https://github.com/Linxford/Flutter_Neumo)
 
 ☝️ Playing with LightSource & Depth
 
@@ -166,10 +166,10 @@ Neumo(
 | [BoxShape](#-custom-shape) | Circle, RoundRect(radius), Stadium, Path | The box shape of a Neumo element. Stadium : roundrect with cirlces on each side |
 | [Border](#-accessibility--border) | NeumoBorder | A border (color/width) to enhance contrast with background and others elements |
 
-[![Neumo](https://github.com/Linxford/Flutter_Neumo/blob/master/medias/doc/depth.gif)](https://github.com/Linxford/Flutter_Neumo)
-[![Neumo](https://github.com/Linxford/Flutter_Neumo/blob/master/medias/doc/intensity.gif)](https://github.com/Linxford/Flutter_Neumo)
-[![Neumo](https://github.com/Linxford/Flutter_Neumo/blob/master/medias/doc/surface_intensity.gif)](https://github.com/Linxford/Flutter_Neumo)
-[![Neumo](https://github.com/Linxford/Flutter_Neumo/blob/master/medias/doc/lightsource.gif)](https://github.com/Linxford/Flutter_Neumo)
+[![Neumo](/medias/doc/depth.gif)](https://github.com/Linxford/Flutter_Neumo)
+[![Neumo](/medias/doc/intensity.gif)](https://github.com/Linxford/Flutter_Neumo)
+[![Neumo](/medias/doc/surface_intensity.gif)](https://github.com/Linxford/Flutter_Neumo)
+[![Neumo](/medias/doc/lightsource.gif)](https://github.com/Linxford/Flutter_Neumo)
 
 
 ### 🔧 Shapes
@@ -187,16 +187,16 @@ Neumo(
 
 <tr>
   <td>Flat</td>
-  <td><img src="https://github.com/Linxford/Flutter_Neumo/raw/master/medias/shapes/widget_flat.png"/></td>
-  <td><img src="https://github.com/Linxford/Flutter_Neumo/raw/master/medias/shapes/flat.png"/> </td>
+  <td><img src="/medias/shapes/widget_flat.png"/></td>
+  <td><img src="/medias/shapes/flat.png"/> </td>
   <td>depth >= 0 && shape == Flat</td>
 </tr>
 
 
 <tr>
   <td>Convex</td>
-  <td><img src="https://github.com/Linxford/Flutter_Neumo/raw/master/medias/shapes/widget_convex.png"/></td>
-  <td><img src="https://github.com/Linxford/Flutter_Neumo/raw/master/medias/shapes/convex.png"/> </td>
+  <td><img src="/medias/shapes/widget_convex.png"/></td>
+  <td><img src="/medias/shapes/convex.png"/> </td>
   <td>depth >= 0 && shape == Convex</td>
 </tr>
 
@@ -204,16 +204,16 @@ Neumo(
 
 <tr>
   <td>Concave</td>
-  <td><img src="https://github.com/Linxford/Flutter_Neumo/raw/master/medias/shapes/widget_concave.png"/></td>
-  <td><img src="https://github.com/Linxford/Flutter_Neumo/raw/master/medias/shapes/concave.png"/> </td>
+  <td><img src="/medias/shapes/widget_concave.png"/></td>
+  <td><img src="/medias/shapes/concave.png"/> </td>
   <td>depth >= 0 && shape == Concave</td>
 </tr>
 
 
 <tr>
   <td>Emboss</td>
-  <td><img src="https://github.com/Linxford/Flutter_Neumo/raw/master/medias/shapes/widget_emboss.png"/></td>
-  <td><img src="https://github.com/Linxford/Flutter_Neumo/raw/master/medias/shapes/emboss.png"/> </td>
+  <td><img src="/medias/shapes/widget_emboss.png"/></td>
+  <td><img src="/medias/shapes/emboss.png"/> </td>
   <td>depth < 0</td>
 </tr>
 
@@ -222,7 +222,7 @@ Neumo(
 
 ## Neumo Text
 
-[![text](https://github.com/Linxford/Flutter_Neumo/blob/master/medias/widgets/text.png)](https://github.com/Linxford/Flutter_Neumo)
+[![text](/medias/widgets/text.png)](https://github.com/Linxford/Flutter_Neumo)
 
 **Text only handle positive depth**
 
@@ -243,7 +243,7 @@ child: NeumoText(
 
 ## Neumo Icon
 
-[![custom_shape](https://github.com/Linxford/Flutter_Neumo/blob/master/medias/neumo_icon.png)](https://github.com/Linxford/Flutter_Neumo)
+[![custom_shape](/medias/neumo_icon.png)](https://github.com/Linxford/Flutter_Neumo)
 
 ```dart
 child: NeumoIcon(
@@ -256,11 +256,11 @@ How to display **SVG** icons ?
 
 Simply use [https://fluttericon.com/](https://fluttericon.com/) to export your svg as .ttf & use NeumoIcon(YOUR_ICON)
 
-[![custom_shape](https://github.com/Linxford/Flutter_Neumo/blob/master/medias/flutter_svg.png)](https://fluttericon.com/)
+[![custom_shape](/medias/flutter_svg.png)](https://fluttericon.com/)
 
 ## 🎨 Custom Shape
 
-[![custom_shape](https://github.com/Linxford/Flutter_Neumo/blob/master/medias/custom_shape.gif)](https://github.com/Linxford/Flutter_Neumo)
+[![custom_shape](/medias/custom_shape.gif)](https://github.com/Linxford/Flutter_Neumo)
 
 Flutter Neumo supports custom shapes, just provide a path to
 
@@ -312,7 +312,7 @@ Neumo(
 For design purposes, or simply to enhance accessibility,
 you can add a border on Neumo widgets
 
-[![Neumo](https://github.com/Linxford/Flutter_Neumo/blob/master/medias/border.gif)](https://github.com/Linxford/Flutter_Neumo)
+[![Neumo](/medias/border.gif)](https://github.com/Linxford/Flutter_Neumo)
 
 ```dart
 Neumo(
@@ -341,8 +341,8 @@ Note that `borderColor` and `borderWidth` default values has been added to `Neum
 ## 🎨 Neumo Theme
 
 
-[![neumo_theme](https://github.com/Linxford/Flutter_Neumo/blob/master/medias/toggleDark.gif)](https://github.com/Linxford/Flutter_Neumo)
-[![neumo_theme](https://github.com/Linxford/Flutter_Neumo/blob/master/medias/toggleTheme.gif)](https://github.com/Linxford/Flutter_Neumo)
+[![neumo_theme](/medias/toggleDark.gif)](https://github.com/Linxford/Flutter_Neumo)
+[![neumo_theme](/medias/toggleTheme.gif)](https://github.com/Linxford/Flutter_Neumo)
 
 ```dart
 NeumoTheme(
@@ -421,7 +421,7 @@ class MyApp extends StatelessWidget {
 
 # What's neumo
 
-[![neumo](https://github.com/Linxford/Flutter_Neumo/blob/master/medias/neumo.jpg)]()
+[![neumo](/medias/neumo.jpg)]()
 
 ## Material Cards
 
@@ -431,22 +431,22 @@ A Modern / Material (upgraded) card usually is a surface floating on top of our 
 
 Neumo card however pretends to extrude from the background. It’s a raised shape made from the exact same material as the background. When we look at it from the side we see that it doesn’t “float”.
 
-[![neumo_button](https://github.com/Linxford/Flutter_Neumo/blob/master/medias/button_press.gif)](https://github.com/Linxford/Flutter_Neumo)
+[![neumo_button](/medias/button_press.gif)](https://github.com/Linxford/Flutter_Neumo)
 
 Here's a Nereumorphic Button tap (slowed x2) from the sample app, you can see how the element seems to change its depth to its surface.
 
-
+<!--
 # 👥 Contributors
 
 
 |                                                                                | Contributors |
-|:------------------------------------------------------------------------------:|--------------|
-<!-- | [![florent](https://github.com/Linxford/Flutter_Neumo/blob/master/medias/contributors/florent.jpeg)](https://github.com/florent37) | [Florent Champigny](https://github.com/florent37) |
-| [![olivier](https://github.com/Linxford/Flutter_Neumo/blob/master/medias/contributors/olivier.png)](https://github.com/Debilobob)  | [Olivier Bonvila](https://github.com/Debilobob)  |
-| [![gyl](https://github.com/Linxford/Flutter_Neumo/blob/master/medias/contributors/gyl.png)](https://github.com/almighty972)        | [Gyl Jean Lambert](https://github.com/almighty972)  |
-| [![jaumard](https://github.com/Linxford/Flutter_Neumo/blob/master/medias/contributors/jaumard.jpeg)](https://github.com/jaumard)    | [Jimmy Aumard](https://github.com/jaumard)  |
-| [![Overman775](https://github.com/Linxford/Flutter_Neumo/blob/master/medias/contributors/overman775.jpeg)](https://github.com/Overman775)    | [Overman775](https://github.com/Overman775)  |
-| [![schopy](https://github.com/Linxford/Flutter_Neumo/blob/master/medias/contributors/schopy.jpeg)](https://github.com/schopy)    | [schopy](https://github.com/schopy)  | -->
+|:------------------------------------------------------------------------------:|--------------| -->
+<!-- | [![florent](/medias/contributors/florent.jpeg)](https://github.com/florent37) | [Florent Champigny](https://github.com/florent37) |
+| [![olivier](/medias/contributors/olivier.png)](https://github.com/Debilobob)  | [Olivier Bonvila](https://github.com/Debilobob)  |
+| [![gyl](/medias/contributors/gyl.png)](https://github.com/almighty972)        | [Gyl Jean Lambert](https://github.com/almighty972)  |
+| [![jaumard](/medias/contributors/jaumard.jpeg)](https://github.com/jaumard)    | [Jimmy Aumard](https://github.com/jaumard)  |
+| [![Overman775](/medias/contributors/overman775.jpeg)](https://github.com/Overman775)    | [Overman775](https://github.com/Overman775)  |
+| [![schopy](/medias/contributors/schopy.jpeg)](https://github.com/schopy)    | [schopy](https://github.com/schopy)  | -->
 
 
 ## 📄 License
@@ -457,4 +457,4 @@ See [LICENSE](./LICENSE) for details.
 
 If you use the open-source library in your project, please make sure to credit and backlink to www.idean.com
 
-[![bottom_banner](https://github.com/Linxford/Flutter_Neumo/blob/master/medias/bottom_banner.png)](https://www.idean.com)
+[![bottom_banner](/medias/bottom_banner.png)](https://www.idean.com)
