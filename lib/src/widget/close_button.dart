@@ -1,0 +1,28 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_neumo/flutter_neumo.dart';
+
+class NeumoCloseButton extends StatelessWidget {
+  final VoidCallback? onPressed;
+  final NeumoStyle? style;
+  final EdgeInsets? padding;
+
+  const NeumoCloseButton({
+    Key? key,
+    this.onPressed,
+    this.style,
+    this.padding,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final nThemeIcons = NeumoTheme.of(context)!.current!.appBarTheme.icons;
+    return NeumoButton(
+      style: style,
+      padding: padding,
+      tooltip: MaterialLocalizations.of(context).closeButtonTooltip,
+      child: nThemeIcons.closeIcon,
+      onPressed: onPressed ?? () => Navigator.maybePop(context),
+    );
+  }
+}
