@@ -1,5 +1,4 @@
 import '../../flutter_neumo.dart';
-import 'neumo_path_provider.dart';
 
 class RRectPathProvider extends NeumoPathProvider {
   final BorderRadius borderRadius;

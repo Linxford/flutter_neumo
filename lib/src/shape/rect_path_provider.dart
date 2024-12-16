@@ -1,5 +1,4 @@
 import '../../flutter_neumo.dart';
-import 'neumo_path_provider.dart';
 
 class RectPathProvider extends NeumoPathProvider {
   const RectPathProvider({Listenable? reclip});

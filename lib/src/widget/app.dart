@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_neumo/flutter_neumo.dart';
 
 class NeumoApp extends StatelessWidget {

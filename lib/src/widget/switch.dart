@@ -194,8 +194,9 @@ class NeumoSwitch extends StatelessWidget {
   double get _thumbDepth {
     if (!isEnabled) {
       return 0;
-    } else
+    } else {
       return style.thumbDepth ?? neumoDefaultTheme.depth;
+    }
   }
 
   NeumoShape get _getThumbShape {

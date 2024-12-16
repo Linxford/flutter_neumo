@@ -9,12 +9,12 @@ class NeumoBackButton extends StatelessWidget {
   final bool forward;
 
   const NeumoBackButton({
-    Key? key,
+    super.key,
     this.onPressed,
     this.style,
     this.padding,
     this.forward = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -23,8 +23,8 @@ class NeumoBackButton extends StatelessWidget {
       style: style,
       padding: padding,
       tooltip: MaterialLocalizations.of(context).backButtonTooltip,
-      child: forward ? nThemeIcons.forwardIcon : nThemeIcons.backIcon,
       onPressed: onPressed ?? () => Navigator.maybePop(context),
+      child: forward ? nThemeIcons.forwardIcon : nThemeIcons.backIcon,
     );
   }
 }

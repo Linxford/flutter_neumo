@@ -1,5 +1,4 @@
 import '../../flutter_neumo.dart';
-import 'neumo_path_provider.dart';
 import 'dart:math' as math;
 
 class BeveledPathProvider extends NeumoPathProvider {

@@ -189,7 +189,6 @@ class _NeumoText extends material.StatefulWidget {
   final TextAlign textAlign;
 
   const _NeumoText({
-    super.key,
     required this.duration,
     required this.curve,
     required this.textAlign,

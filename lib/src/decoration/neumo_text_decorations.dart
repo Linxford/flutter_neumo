@@ -14,7 +14,7 @@ class NeumoTextDecoration extends Decoration {
   final bool isForeground;
   final TextAlign textAlign;
 
-  NeumoTextDecoration({
+  const NeumoTextDecoration({
     required this.style,
     required this.textStyle,
     required this.isForeground,
@@ -36,7 +36,7 @@ class NeumoTextDecoration extends Decoration {
         //only box draw background
         drawShadow: !isForeground,
         //only box draw shadow
-        renderingByPath: this.renderingByPath,
+        renderingByPath: renderingByPath,
         onChanged: onChanged ?? () {},
         text: text,
       );
@@ -73,9 +73,9 @@ class NeumoTextDecoration extends Decoration {
   NeumoTextDecoration scale(double factor) {
     print("scale");
     return NeumoTextDecoration(
-        textAlign: this.textAlign,
-        isForeground: this.isForeground,
-        renderingByPath: this.renderingByPath,
+        textAlign: textAlign,
+        isForeground: isForeground,
+        renderingByPath: renderingByPath,
         text: text,
         textStyle: textStyle,
         style: style.copyWith());
@@ -104,7 +104,7 @@ class NeumoTextDecoration extends Decoration {
         isForeground: a.isForeground,
         text: a.text,
         textAlign: a.textAlign,
-        textStyle: TextStyle.lerp(a.textStyle, b.textStyle, t) ?? TextStyle(),
+        textStyle: TextStyle.lerp(a.textStyle, b.textStyle, t) ?? const TextStyle(),
         renderingByPath: a.renderingByPath,
         style: a.style.copyWith(
           border: NeumoBorder.lerp(aStyle.border, bStyle.border, t),

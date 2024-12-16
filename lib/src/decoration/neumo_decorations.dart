@@ -14,7 +14,7 @@ class NeumoDecoration extends Decoration {
   final bool renderingByPath;
   final bool isForeground;
 
-  NeumoDecoration({
+  const NeumoDecoration({
     required this.style,
     required this.isForeground,
     required this.renderingByPath,
@@ -34,7 +34,7 @@ class NeumoDecoration extends Decoration {
         //only box draw background
         drawShadow: !isForeground,
         //only box draw shadow
-        renderingByPath: this.renderingByPath,
+        renderingByPath: renderingByPath,
         onChanged: onChanged ?? () {},
         shape: shape,
       );
@@ -67,9 +67,9 @@ class NeumoDecoration extends Decoration {
   NeumoDecoration scale(double factor) {
     print("scale");
     return NeumoDecoration(
-        isForeground: this.isForeground,
-        renderingByPath: this.renderingByPath,
-        splitBackgroundForeground: this.splitBackgroundForeground,
+        isForeground: isForeground,
+        renderingByPath: renderingByPath,
+        splitBackgroundForeground: splitBackgroundForeground,
         shape: NeumoBoxShape.lerp(null, shape, factor)!,
         style: style.copyWith());
   }

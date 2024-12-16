@@ -8,11 +8,11 @@ class NeumoCloseButton extends StatelessWidget {
   final EdgeInsets? padding;
 
   const NeumoCloseButton({
-    Key? key,
+    super.key,
     this.onPressed,
     this.style,
     this.padding,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +21,8 @@ class NeumoCloseButton extends StatelessWidget {
       style: style,
       padding: padding,
       tooltip: MaterialLocalizations.of(context).closeButtonTooltip,
-      child: nThemeIcons.closeIcon,
       onPressed: onPressed ?? () => Navigator.maybePop(context),
+      child: nThemeIcons.closeIcon,
     );
   }
 }

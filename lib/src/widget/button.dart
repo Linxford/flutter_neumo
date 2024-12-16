@@ -1,10 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_neumo/flutter_neumo.dart';
-import '../widget/app_bar.dart';
 import 'animation/animated_scale.dart' as animationScale;
-import 'container.dart';
 
 typedef NeumoButtonClickListener = void Function();
 

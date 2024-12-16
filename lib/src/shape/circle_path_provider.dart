@@ -1,7 +1,6 @@
 import 'dart:math';
 
 import '../../flutter_neumo.dart';
-import 'neumo_path_provider.dart';
 
 class CirclePathProvider extends NeumoPathProvider {
   const CirclePathProvider({Listenable? reclip});
