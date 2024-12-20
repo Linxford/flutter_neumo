@@ -26,7 +26,7 @@ jobs:
       # Add Flutter SDK installation with specific version
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.19.3'
+          flutter-version: '3.27.1'
           channel: 'stable'
 
       - name: Install dependencies
