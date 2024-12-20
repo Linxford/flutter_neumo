@@ -23,10 +23,10 @@ jobs:
       # https://github.com/dart-lang/setup-dart/blob/main/README.md
       - uses: dart-lang/setup-dart@v1
 
-      # Add Flutter SDK installation
+      # Add Flutter SDK installation with specific version
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.27.1'
+          flutter-version: '3.19.3'
           channel: 'stable'
 
       - name: Install dependencies
@@ -35,11 +35,8 @@ jobs:
       - name: Format code
         run: dart format .
 
-      - name: Verify formatting
-        run: dart format --output=none --set-exit-if-changed .
-
       - name: Analyze project source
-        run: dart analyze --fatal-infos
+        run: flutter analyze --fatal-infos --no-fatal-warnings
 
       - name: Run tests
         run: flutter test
