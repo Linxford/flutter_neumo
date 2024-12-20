@@ -6,7 +6,7 @@ void main() {
     const theme = NeumoThemeData();
 
     expect(theme.depth, equals(4.0));
-    expect(theme.intensity, equals(0.5));
+    expect(theme.intensity, equals(0.7));
     expect(theme.lightSource, equals(LightSource.topLeft));
   });
 
