@@ -18,11 +18,11 @@ class _ThemeColorSelectorState extends State<ThemeColorSelector> {
       padding: const EdgeInsets.all(4),
       color: Colors.black,
       child: ColorSelector(
-        color: NeumoTheme.baseColor(widget.customContext ?? context),
+        color: NeumoTheme.baseColor(widget.customContext),
         onColorChanged: (color) {
           setState(() {
             NeumoTheme.update(
-                widget.customContext ?? context,
+                widget.customContext,
                 (current) =>
                     current?.copyWith(baseColor: color) ??
                     const NeumoThemeData());

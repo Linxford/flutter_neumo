@@ -304,12 +304,7 @@ class __PageState extends State<_Page> {
       child: SizedBox(
         height: height,
         width: width,
-        child: haveNeumoChild
-            ? neumoChild()
-            : Container(
-                //color: Colors.blue,
-                child: const Center(child: Text("")),
-              ),
+        child: haveNeumoChild ? neumoChild() : const Center(child: Text("")),
       ),
     );
   }
