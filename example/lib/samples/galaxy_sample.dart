@@ -3,10 +3,12 @@ import 'package:example/lib/top_bar.dart';
 import 'package:flutter_neumo/flutter_neumo.dart';
 
 class GalaxySample extends StatelessWidget {
+  const GalaxySample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return NeumoTheme(
-      theme: NeumoThemeData(
+      theme: const NeumoThemeData(
         baseColor: Color(0xFFE5E5E5),
         depth: 20,
         intensity: 1,
@@ -15,7 +17,7 @@ class GalaxySample extends StatelessWidget {
       themeMode: ThemeMode.light,
       child: Material(
         child: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 gradient: LinearGradient(
               colors: [
                 Color(0xFFF1F1F1),
@@ -38,7 +40,7 @@ class _Page extends StatefulWidget {
 class _PageState extends State<_Page> {
   Widget _letter(String letter) {
     return Text(letter,
-        style: TextStyle(
+        style: const TextStyle(
             color: Colors.black,
             fontWeight: FontWeight.w700,
             fontFamily: 'Samsung',
@@ -47,11 +49,11 @@ class _PageState extends State<_Page> {
 
   Widget _firstBox() {
     return Neumo(
-      margin: EdgeInsets.symmetric(horizontal: 4),
+      margin: const EdgeInsets.symmetric(horizontal: 4),
       style: NeumoStyle(
         boxShape: NeumoBoxShape.roundRect(BorderRadius.circular(8)),
       ),
-      child: Neumo(
+      child: const Neumo(
         style: NeumoStyle(
           depth: -1,
           oppositeShadowLightSource: true,
@@ -75,7 +77,7 @@ class _PageState extends State<_Page> {
             lightSource: LightSource.topLeft,
             boxShape: NeumoBoxShape.roundRect(BorderRadius.circular(8)),
           ),
-          child: Neumo(
+          child: const Neumo(
             style: NeumoStyle(
               depth: -1,
               oppositeShadowLightSource: true,
@@ -102,7 +104,7 @@ class _PageState extends State<_Page> {
             left: 0,
             right: 0,
             child: Container(
-              margin: EdgeInsets.only(left: 12, right: 12, top: 10),
+              margin: const EdgeInsets.only(left: 12, right: 12, top: 10),
               child: TopBar(
                 actions: <Widget>[
                   ThemeConfigurator(),

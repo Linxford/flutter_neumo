@@ -4,6 +4,8 @@ import 'package:flutter_neumo/flutter_neumo.dart';
 void main() => runApp(NeumoPlayground());
 
 class NeumoPlayground extends StatefulWidget {
+  const NeumoPlayground({super.key});
+
   @override
   _NeumoPlaygroundState createState() => _NeumoPlaygroundState();
 }
@@ -14,7 +16,7 @@ class _NeumoPlaygroundState extends State<NeumoPlayground> {
     return NeumoApp(
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.light,
-      theme: NeumoThemeData(
+      theme: const NeumoThemeData(
         baseColor: Color(0xffDDDDDD),
         lightSource: LightSource.topLeft,
         depth: 6,
@@ -84,9 +86,9 @@ class __PageState extends State<_Page> {
 
   Widget _configurators() {
     final Color buttonActiveColor = Theme.of(context).accentColor;
-    final Color buttonInnactiveColor = Colors.white;
+    const Color buttonInnactiveColor = Colors.white;
 
-    final Color textActiveColor = Colors.white;
+    const Color textActiveColor = Colors.white;
     final Color textInactiveColor = Colors.black.withOpacity(0.3);
 
     return Column(
@@ -97,7 +99,7 @@ class __PageState extends State<_Page> {
   }
 
   Widget styleCustomizer() {
-    return Column(
+    return const Column(
       mainAxisSize: MainAxisSize.max,
       children: [
         //depthSelector(),
@@ -111,25 +113,25 @@ class __PageState extends State<_Page> {
   Widget neumo() {
     return NeumoButton(
       padding: EdgeInsets.zero,
-      duration: Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 300),
       onPressed: () {
         setState(() {});
       },
-      drawSurfaceAboveChild: this.drawAboveChild,
+      drawSurfaceAboveChild: drawAboveChild,
       style: NeumoStyle(
         boxShape: boxShape,
         //border: NeumoBorder(),
-        shape: this.shape,
-        intensity: this.intensity,
+        shape: shape,
+        intensity: intensity,
         /*
         shadowLightColor: Colors.red,
         shadowDarkColor: Colors.blue,
         shadowLightColorEmboss: Colors.red,
         shadowDarkColorEmboss: Colors.blue,
          */
-        surfaceIntensity: this.surfaceIntensity,
+        surfaceIntensity: surfaceIntensity,
         depth: depth,
-        lightSource: this.lightSource,
+        lightSource: lightSource,
       ),
       child: SizedBox(
         height: height,
@@ -138,7 +140,7 @@ class __PageState extends State<_Page> {
             ? neumoChild()
             : Container(
                 //color: Colors.blue,
-                child: Center(child: Text("")),
+                child: const Center(child: Text("")),
               ),
       ),
     );
@@ -147,25 +149,25 @@ class __PageState extends State<_Page> {
   Widget neumoChild() {
     return Neumo(
       padding: EdgeInsets.zero,
-      duration: Duration(milliseconds: 300),
-      margin: EdgeInsets.all(this.childMargin),
+      duration: const Duration(milliseconds: 300),
+      margin: EdgeInsets.all(childMargin),
       drawSurfaceAboveChild: true,
       style: NeumoStyle(
           boxShape: boxShape,
           //shape: this.shape,
-          intensity: this.intensity,
-          surfaceIntensity: this.surfaceIntensity,
+          intensity: intensity,
+          surfaceIntensity: surfaceIntensity,
           depth: childDepth,
-          lightSource: this.lightSource,
-          oppositeShadowLightSource: this.childOppositeLightsourceChild),
-      child: SizedBox.expand(),
+          lightSource: lightSource,
+          oppositeShadowLightSource: childOppositeLightsourceChild),
+      child: const SizedBox.expand(),
     );
   }
 
   Widget depthSelector() {
     return Row(
       children: <Widget>[
-        Padding(
+        const Padding(
           padding: EdgeInsets.only(left: 12),
           child: Text("Depth"),
         ),
@@ -182,7 +184,7 @@ class __PageState extends State<_Page> {
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(right: 12),
+          padding: const EdgeInsets.only(right: 12),
           child: Text(depth.floor().toString()),
         ),
       ],
@@ -192,7 +194,7 @@ class __PageState extends State<_Page> {
   Widget intensitySelector() {
     return Row(
       children: <Widget>[
-        Padding(
+        const Padding(
           padding: EdgeInsets.only(left: 12),
           child: Text("Intensity"),
         ),
@@ -209,7 +211,7 @@ class __PageState extends State<_Page> {
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(right: 12),
+          padding: const EdgeInsets.only(right: 12),
           child: Text(((intensity * 100).floor() / 100).toString()),
         ),
       ],
@@ -219,7 +221,7 @@ class __PageState extends State<_Page> {
   Widget surfaceIntensitySelector() {
     return Row(
       children: <Widget>[
-        Padding(
+        const Padding(
           padding: EdgeInsets.only(left: 12),
           child: Text("SurfaceIntensity"),
         ),
@@ -236,7 +238,7 @@ class __PageState extends State<_Page> {
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(right: 12),
+          padding: const EdgeInsets.only(right: 12),
           child: Text(((surfaceIntensity * 100).floor() / 100).toString()),
         ),
       ],
@@ -245,9 +247,9 @@ class __PageState extends State<_Page> {
 
   Widget shapeWidget() {
     final Color buttonActiveColor = Theme.of(context).accentColor;
-    final Color buttonInnactiveColor = Colors.white;
+    const Color buttonInnactiveColor = Colors.white;
 
-    final Color iconActiveColor = Colors.white;
+    const Color iconActiveColor = Colors.white;
     final Color iconInactiveColor = Colors.black.withOpacity(0.3);
 
     return Row(

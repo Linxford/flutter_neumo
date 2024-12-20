@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumo/flutter_neumo.dart';
 
 class IconWidgetPage extends StatefulWidget {
-  IconWidgetPage({Key key}) : super(key: key);
+  const IconWidgetPage({Key key}) : super(key: key);
 
   @override
   createState() => _WidgetPageState();
@@ -15,7 +15,7 @@ class _WidgetPageState extends State<IconWidgetPage> {
   Widget build(BuildContext context) {
     return NeumoTheme(
       themeMode: ThemeMode.light,
-      theme: NeumoThemeData(
+      theme: const NeumoThemeData(
         lightSource: LightSource.topLeft,
         accentColor: NeumoColors.accent,
         depth: 4,
@@ -35,7 +35,7 @@ class _PageState extends State<_Page> {
   @override
   Widget build(BuildContext context) {
     return NeumoBackground(
-      padding: EdgeInsets.all(8),
+      padding: const EdgeInsets.all(8),
       child: Scaffold(
         appBar: TopBar(
           title: "Icons",
@@ -46,7 +46,7 @@ class _PageState extends State<_Page> {
         backgroundColor: Colors.transparent,
         body: GridView.builder(
           gridDelegate:
-              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
+              const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
           itemCount: icons.length,
           itemBuilder: (context, index) {
             return Padding(
@@ -54,7 +54,7 @@ class _PageState extends State<_Page> {
               child: NeumoIcon(
                 icons[index],
                 size: 80,
-                style: NeumoStyle(
+                style: const NeumoStyle(
                     //shape: NeumoShape.convex,
                     //surfaceIntensity: 1.0
                     ),

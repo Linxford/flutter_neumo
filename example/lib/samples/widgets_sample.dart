@@ -1,7 +1,7 @@
 import 'package:flutter_neumo/flutter_neumo.dart';
 
 class WidgetsSample extends StatefulWidget {
-  WidgetsSample({Key key}) : super(key: key);
+  const WidgetsSample({Key key}) : super(key: key);
 
   @override
   createState() => _ContainersListPageState();
@@ -16,9 +16,9 @@ class _ContainersListPageState extends State<WidgetsSample> {
   bool useDark = false;
 
   Color _textColor() {
-    if (useDark)
+    if (useDark) {
       return Colors.white70;
-    else {
+    } else {
       return Colors.black;
     }
   }
@@ -30,14 +30,14 @@ class _ContainersListPageState extends State<WidgetsSample> {
           "Progress",
           style: TextStyle(color: _textColor()),
         ),
-        SizedBox(width: 12),
-        Flexible(
+        const SizedBox(width: 12),
+        const Flexible(
           child: NeumoProgress(
             height: 15,
             percent: 0.55,
           ),
         ),
-        SizedBox(width: 12),
+        const SizedBox(width: 12),
       ],
     );
   }
@@ -49,13 +49,13 @@ class _ContainersListPageState extends State<WidgetsSample> {
           "Progress",
           style: TextStyle(color: _textColor()),
         ),
-        SizedBox(width: 12),
-        Flexible(
+        const SizedBox(width: 12),
+        const Flexible(
           child: NeumoProgressIndeterminate(
             height: 10,
           ),
         ),
-        SizedBox(width: 12),
+        const SizedBox(width: 12),
       ],
     );
   }
@@ -67,13 +67,13 @@ class _ContainersListPageState extends State<WidgetsSample> {
           "Buttons",
           style: TextStyle(color: _textColor()),
         ),
-        SizedBox(width: 4),
+        const SizedBox(width: 4),
         NeumoButton(
-          style: NeumoStyle(
+          style: const NeumoStyle(
             shape: NeumoShape.flat,
             boxShape: NeumoBoxShape.stadium(),
           ),
-          padding: EdgeInsets.symmetric(vertical: 8, horizontal: 18),
+          padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 18),
           child: Text(
             "button 1",
             style: TextStyle(color: _textColor()),
@@ -84,13 +84,13 @@ class _ContainersListPageState extends State<WidgetsSample> {
             });
           },
         ),
-        SizedBox(width: 10),
+        const SizedBox(width: 10),
         NeumoButton(
-          style: NeumoStyle(
+          style: const NeumoStyle(
             shape: NeumoShape.flat,
             boxShape: NeumoBoxShape.stadium(),
           ),
-          padding: EdgeInsets.symmetric(vertical: 8, horizontal: 18),
+          padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 18),
           child: Text(
             "button 2",
             style: TextStyle(color: _textColor()),
@@ -108,8 +108,15 @@ class _ContainersListPageState extends State<WidgetsSample> {
           "Radio",
           style: TextStyle(color: _textColor()),
         ),
-        SizedBox(width: 12),
+        const SizedBox(width: 12),
         NeumoRadio(
+          value: 1,
+          groupValue: _groupValue,
+          onChanged: (value) {
+            setState(() {
+              _groupValue = value;
+            });
+          },
           child: SizedBox(
             height: 50,
             width: 50,
@@ -120,16 +127,16 @@ class _ContainersListPageState extends State<WidgetsSample> {
               ),
             ),
           ),
-          value: 1,
+        ),
+        const SizedBox(width: 12),
+        NeumoRadio(
+          value: 2,
           groupValue: _groupValue,
           onChanged: (value) {
             setState(() {
               _groupValue = value;
             });
           },
-        ),
-        SizedBox(width: 12),
-        NeumoRadio(
           child: SizedBox(
             height: 50,
             width: 50,
@@ -140,16 +147,16 @@ class _ContainersListPageState extends State<WidgetsSample> {
               ),
             ),
           ),
-          value: 2,
+        ),
+        const SizedBox(width: 12),
+        NeumoRadio(
+          value: 3,
           groupValue: _groupValue,
           onChanged: (value) {
             setState(() {
               _groupValue = value;
             });
           },
-        ),
-        SizedBox(width: 12),
-        NeumoRadio(
           child: SizedBox(
             height: 50,
             width: 50,
@@ -160,13 +167,6 @@ class _ContainersListPageState extends State<WidgetsSample> {
               ),
             ),
           ),
-          value: 3,
-          groupValue: _groupValue,
-          onChanged: (value) {
-            setState(() {
-              _groupValue = value;
-            });
-          },
         ),
       ],
     );
@@ -183,7 +183,7 @@ class _ContainersListPageState extends State<WidgetsSample> {
           "Checkbox",
           style: TextStyle(color: _textColor()),
         ),
-        SizedBox(width: 12),
+        const SizedBox(width: 12),
         NeumoCheckbox(
           value: check1,
           onChanged: (value) {
@@ -192,7 +192,7 @@ class _ContainersListPageState extends State<WidgetsSample> {
             });
           },
         ),
-        SizedBox(width: 12),
+        const SizedBox(width: 12),
         NeumoCheckbox(
           value: check2,
           onChanged: (value) {
@@ -201,7 +201,7 @@ class _ContainersListPageState extends State<WidgetsSample> {
             });
           },
         ),
-        SizedBox(width: 12),
+        const SizedBox(width: 12),
         NeumoCheckbox(
           value: check3,
           onChanged: (value) {
@@ -215,7 +215,7 @@ class _ContainersListPageState extends State<WidgetsSample> {
   }
 
   Widget _buildIndicators() {
-    final width = 14.0;
+    const width = 14.0;
     return SizedBox(
       height: 130,
       child: Row(
@@ -225,37 +225,37 @@ class _ContainersListPageState extends State<WidgetsSample> {
             width: width,
             percent: 0.4,
           ),
-          SizedBox(width: 10),
+          const SizedBox(width: 10),
           NeumoIndicator(
             width: width,
             percent: 0.2,
           ),
-          SizedBox(width: 10),
+          const SizedBox(width: 10),
           NeumoIndicator(
             width: width,
             percent: 0.5,
           ),
-          SizedBox(width: 10),
+          const SizedBox(width: 10),
           NeumoIndicator(
             width: width,
             percent: 1,
           ),
-          SizedBox(width: 10),
+          const SizedBox(width: 10),
           NeumoIndicator(
             width: width,
             percent: 0.4,
           ),
-          SizedBox(width: 10),
+          const SizedBox(width: 10),
           NeumoIndicator(
             width: width,
             percent: 0.2,
           ),
-          SizedBox(width: 10),
+          const SizedBox(width: 10),
           NeumoIndicator(
             width: width,
             percent: 0.5,
           ),
-          SizedBox(width: 10),
+          const SizedBox(width: 10),
           NeumoIndicator(
             width: width,
             percent: 1,
@@ -274,7 +274,7 @@ class _ContainersListPageState extends State<WidgetsSample> {
           "Slider",
           style: TextStyle(color: _textColor()),
         ),
-        SizedBox(width: 12),
+        const SizedBox(width: 12),
         Flexible(
           child: NeumoSlider(
               height: 15,
@@ -287,12 +287,12 @@ class _ContainersListPageState extends State<WidgetsSample> {
                 });
               }),
         ),
-        SizedBox(width: 12),
+        const SizedBox(width: 12),
         Text(
           "value: ${seekValue.round()}",
           style: TextStyle(color: _textColor()),
         ),
-        SizedBox(width: 12),
+        const SizedBox(width: 12),
       ],
     );
   }
@@ -303,10 +303,10 @@ class _ContainersListPageState extends State<WidgetsSample> {
         "Switch",
         style: TextStyle(color: _textColor()),
       ),
-      SizedBox(width: 15),
+      const SizedBox(width: 15),
       NeumoSwitch(
         value: _switchConcaveEnabled,
-        style: NeumoSwitchStyle(
+        style: const NeumoSwitchStyle(
           thumbShape: NeumoShape.concave, // concave or flat with elevation
         ),
         onChanged: (value) {
@@ -315,10 +315,10 @@ class _ContainersListPageState extends State<WidgetsSample> {
           });
         },
       ),
-      SizedBox(width: 15),
+      const SizedBox(width: 15),
       NeumoSwitch(
         value: _switchFlatEnabled,
-        style: NeumoSwitchStyle(
+        style: const NeumoSwitchStyle(
           thumbShape: NeumoShape.flat, // concave or flat with elevation
         ),
         onChanged: (value) {
@@ -327,10 +327,10 @@ class _ContainersListPageState extends State<WidgetsSample> {
           });
         },
       ),
-      SizedBox(width: 15),
+      const SizedBox(width: 15),
       NeumoSwitch(
         value: _switchConvexEnabled,
-        style: NeumoSwitchStyle(
+        style: const NeumoSwitchStyle(
           thumbShape: NeumoShape.convex,
         ),
         onChanged: (value) {
@@ -346,14 +346,14 @@ class _ContainersListPageState extends State<WidgetsSample> {
   Widget build(BuildContext context) {
     return NeumoTheme(
       themeMode: useDark ? ThemeMode.dark : ThemeMode.light,
-      darkTheme: NeumoThemeData(
+      darkTheme: const NeumoThemeData(
         baseColor: NeumoColors.darkBackground,
         accentColor: NeumoColors.darkAccent,
         lightSource: LightSource.topLeft,
         depth: 6,
         intensity: 0.3,
       ),
-      theme: NeumoThemeData(
+      theme: const NeumoThemeData(
         baseColor: NeumoColors.background,
         lightSource: LightSource.topLeft,
         depth: 10,
@@ -375,6 +375,7 @@ class _ContainersListPageState extends State<WidgetsSample> {
                   Stack(
                     children: <Widget>[
                       Neumo(
+                        style: const NeumoStyle(depth: -8),
                         child: AppBar(
                           iconTheme: IconThemeData.fallback(),
                           backgroundColor: Colors.transparent,
@@ -384,7 +385,6 @@ class _ContainersListPageState extends State<WidgetsSample> {
                             style: TextStyle(color: Colors.black),
                           ),
                         ),
-                        style: NeumoStyle(depth: -8),
                       ),
                       /*
                       Positioned(
@@ -410,23 +410,23 @@ class _ContainersListPageState extends State<WidgetsSample> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       mainAxisSize: MainAxisSize.max,
                       children: <Widget>[
-                        SizedBox(height: 30),
+                        const SizedBox(height: 30),
                         _buildProgress(),
-                        SizedBox(height: 12),
+                        const SizedBox(height: 12),
                         _buildIndeterminateProgress(),
-                        SizedBox(height: 30),
+                        const SizedBox(height: 30),
                         _buildButtons(),
-                        SizedBox(height: 30),
+                        const SizedBox(height: 30),
                         _buildRadios(),
-                        SizedBox(height: 30),
+                        const SizedBox(height: 30),
                         _buildIndicators(),
-                        SizedBox(height: 30),
+                        const SizedBox(height: 30),
                         _buildChecks(),
-                        SizedBox(height: 30),
+                        const SizedBox(height: 30),
                         _buildSlider(),
-                        SizedBox(height: 30),
+                        const SizedBox(height: 30),
                         _buildSwitches(),
-                        SizedBox(height: 30),
+                        const SizedBox(height: 30),
                       ],
                     ),
                   )

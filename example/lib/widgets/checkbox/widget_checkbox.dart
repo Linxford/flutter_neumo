@@ -5,7 +5,7 @@ import 'package:example/lib/top_bar.dart';
 import 'package:flutter_neumo/flutter_neumo.dart';
 
 class CheckboxWidgetPage extends StatefulWidget {
-  CheckboxWidgetPage({Key key}) : super(key: key);
+  const CheckboxWidgetPage({Key key}) : super(key: key);
 
   @override
   createState() => _WidgetPageState();
@@ -16,7 +16,7 @@ class _WidgetPageState extends State<CheckboxWidgetPage> {
   Widget build(BuildContext context) {
     return NeumoTheme(
       themeMode: ThemeMode.light,
-      theme: NeumoThemeData(
+      theme: const NeumoThemeData(
         lightSource: LightSource.topLeft,
         accentColor: NeumoColors.accent,
         depth: 4,
@@ -36,7 +36,7 @@ class _PageState extends State<_Page> {
   @override
   Widget build(BuildContext context) {
     return NeumoBackground(
-      padding: EdgeInsets.all(8),
+      padding: const EdgeInsets.all(8),
       child: Scaffold(
         appBar: TopBar(
           title: "Checkbox",
@@ -54,7 +54,7 @@ class _PageState extends State<_Page> {
               _DefaultWidget(),
               _ColorWidget(),
               _EnabledDisabledWidget(),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
             ],
           ),
         ),
@@ -74,7 +74,7 @@ class _DefaultWidgetState extends State<_DefaultWidget> {
   bool check3 = false;
 
   Widget _buildCode(BuildContext context) {
-    return Code("""
+    return const Code("""
 
 bool isChecked = false;
 
@@ -91,14 +91,14 @@ NeumoCheckbox(
 
   Widget _buildWidget(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       child: Row(
         children: <Widget>[
           Text(
             "Default",
             style: TextStyle(color: NeumoTheme.defaultTextColor(context)),
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           NeumoCheckbox(
             value: check1,
             onChanged: (value) {
@@ -107,7 +107,7 @@ NeumoCheckbox(
               });
             },
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           NeumoCheckbox(
             value: check2,
             onChanged: (value) {
@@ -116,7 +116,7 @@ NeumoCheckbox(
               });
             },
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           NeumoCheckbox(
             value: check3,
             onChanged: (value) {
@@ -130,6 +130,7 @@ NeumoCheckbox(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -155,14 +156,14 @@ class _ColorWidgetState extends State<_ColorWidget> {
 
   Widget _buildWidget(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       child: Row(
         children: <Widget>[
           Text(
             "Colorizable",
             style: TextStyle(color: NeumoTheme.defaultTextColor(context)),
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           ColorSelector(
             color: customColor,
             onColorChanged: (color) {
@@ -171,7 +172,7 @@ class _ColorWidgetState extends State<_ColorWidget> {
               });
             },
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           NeumoCheckbox(
             style: NeumoCheckboxStyle(selectedColor: customColor),
             value: checkColor1,
@@ -181,7 +182,7 @@ class _ColorWidgetState extends State<_ColorWidget> {
               });
             },
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           NeumoCheckbox(
             style: NeumoCheckboxStyle(selectedColor: customColor),
             value: checkColor2,
@@ -191,7 +192,7 @@ class _ColorWidgetState extends State<_ColorWidget> {
               });
             },
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           NeumoCheckbox(
             value: checkColor3,
             style: NeumoCheckboxStyle(selectedColor: customColor),
@@ -207,7 +208,7 @@ class _ColorWidgetState extends State<_ColorWidget> {
   }
 
   Widget _buildCode(BuildContext context) {
-    return Code("""
+    return const Code("""
 
 bool isChecked = false;
 
@@ -225,6 +226,7 @@ NeumoCheckbox(
 """);
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -247,14 +249,14 @@ class _EnabledDisabledWidgetState extends State<_EnabledDisabledWidget> {
 
   Widget _buildWidget(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       child: Row(
         children: <Widget>[
           Text(
             "Enabled",
             style: TextStyle(color: NeumoTheme.defaultTextColor(context)),
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           NeumoCheckbox(
             value: check1,
             onChanged: (value) {
@@ -263,12 +265,12 @@ class _EnabledDisabledWidgetState extends State<_EnabledDisabledWidget> {
               });
             },
           ),
-          SizedBox(width: 24),
+          const SizedBox(width: 24),
           Text(
             "Disabled",
             style: TextStyle(color: NeumoTheme.defaultTextColor(context)),
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           NeumoCheckbox(
             isEnabled: false,
             value: check2,
@@ -284,7 +286,7 @@ class _EnabledDisabledWidgetState extends State<_EnabledDisabledWidget> {
   }
 
   Widget _buildCode(BuildContext context) {
-    return Code("""
+    return const Code("""
 
 bool isChecked = false;
 
@@ -300,6 +302,7 @@ NeumoCheckbox(
 """);
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,

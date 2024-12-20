@@ -5,7 +5,7 @@ import 'package:example/lib/top_bar.dart';
 import 'package:flutter_neumo/flutter_neumo.dart';
 
 class IndeterminateProgressWidgetPage extends StatefulWidget {
-  IndeterminateProgressWidgetPage({Key key}) : super(key: key);
+  const IndeterminateProgressWidgetPage({Key key}) : super(key: key);
 
   @override
   createState() => _WidgetPageState();
@@ -16,7 +16,7 @@ class _WidgetPageState extends State<IndeterminateProgressWidgetPage> {
   Widget build(BuildContext context) {
     return NeumoTheme(
       themeMode: ThemeMode.light,
-      theme: NeumoThemeData(
+      theme: const NeumoThemeData(
         lightSource: LightSource.topLeft,
         accentColor: NeumoColors.accent,
         depth: 4,
@@ -36,7 +36,7 @@ class _PageState extends State<_Page> {
   @override
   Widget build(BuildContext context) {
     return NeumoBackground(
-      padding: EdgeInsets.all(8),
+      padding: const EdgeInsets.all(8),
       child: Scaffold(
         appBar: TopBar(
           title: "IndeterminateProgress",
@@ -57,7 +57,7 @@ class _PageState extends State<_Page> {
               _DurationWidget(),
               _ReversedWidget(),
               _CurveWidget(),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
             ],
           ),
         ),
@@ -73,7 +73,7 @@ class _DefaultWidget extends StatefulWidget {
 
 class _DefaultWidgetState extends State<_DefaultWidget> {
   Widget _buildCode(BuildContext context) {
-    return Code("""
+    return const Code("""
 Expanded(
   child: NeumoProgressIndeterminate(),
 ),
@@ -82,23 +82,24 @@ Expanded(
 
   Widget _buildWidget(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       child: Row(
         children: <Widget>[
           Text(
             "Default",
             style: TextStyle(color: NeumoTheme.defaultTextColor(context)),
           ),
-          SizedBox(width: 12),
-          Expanded(
+          const SizedBox(width: 12),
+          const Expanded(
             child: NeumoProgressIndeterminate(),
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
         ],
       ),
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -117,7 +118,7 @@ class _ColorWidget extends StatefulWidget {
 
 class _ColorWidgetState extends State<_ColorWidget> {
   Widget _buildCode(BuildContext context) {
-    return Code("""
+    return const Code("""
 Expanded(
   child: NeumoProgressIndeterminate(
       style: ProgressStyle(
@@ -134,12 +135,12 @@ Expanded(
 
   Widget _buildWidget(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       child: Column(
         children: <Widget>[
           Row(
             children: <Widget>[
-              Text("Accent : "),
+              const Text("Accent : "),
               ColorSelector(
                 onColorChanged: (color) {
                   setState(() {
@@ -148,8 +149,8 @@ Expanded(
                 },
                 color: accent,
               ),
-              SizedBox(width: 12),
-              Text("Variant : "),
+              const SizedBox(width: 12),
+              const Text("Variant : "),
               ColorSelector(
                 onColorChanged: (color) {
                   setState(() {
@@ -160,14 +161,14 @@ Expanded(
               ),
             ],
           ),
-          SizedBox(height: 12),
+          const SizedBox(height: 12),
           Row(
             children: <Widget>[
               Text(
                 "Default",
                 style: TextStyle(color: NeumoTheme.defaultTextColor(context)),
               ),
-              SizedBox(width: 12),
+              const SizedBox(width: 12),
               Expanded(
                 child: NeumoProgressIndeterminate(
                   style: ProgressStyle(
@@ -176,7 +177,7 @@ Expanded(
                   ),
                 ),
               ),
-              SizedBox(width: 12),
+              const SizedBox(width: 12),
             ],
           ),
         ],
@@ -184,6 +185,7 @@ Expanded(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -202,7 +204,7 @@ class _SizedWidget extends StatefulWidget {
 
 class _SizedWidgetState extends State<_SizedWidget> {
   Widget _buildCode(BuildContext context) {
-    return Code("""
+    return const Code("""
 Expanded(
   child: NeumoProgressIndeterminate(
       height: 30,
@@ -213,23 +215,23 @@ Expanded(
 
   Widget _buildWidget(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       child: Column(
         children: <Widget>[
-          SizedBox(height: 12),
+          const SizedBox(height: 12),
           Row(
             children: <Widget>[
               Text(
                 "Sized",
                 style: TextStyle(color: NeumoTheme.defaultTextColor(context)),
               ),
-              SizedBox(width: 12),
-              Expanded(
+              const SizedBox(width: 12),
+              const Expanded(
                 child: NeumoProgressIndeterminate(
                   height: 30,
                 ),
               ),
-              SizedBox(width: 12),
+              const SizedBox(width: 12),
             ],
           ),
         ],
@@ -237,6 +239,7 @@ Expanded(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -255,7 +258,7 @@ class _DurationWidget extends StatefulWidget {
 
 class _DurationWidgetState extends State<_DurationWidget> {
   Widget _buildCode(BuildContext context) {
-    return Code("""
+    return const Code("""
 Expanded(
   child: NeumoProgressIndeterminate(
        duration: Duration(seconds: 10),
@@ -266,23 +269,23 @@ Expanded(
 
   Widget _buildWidget(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       child: Column(
         children: <Widget>[
-          SizedBox(height: 12),
+          const SizedBox(height: 12),
           Row(
             children: <Widget>[
               Text(
                 "Duration",
                 style: TextStyle(color: NeumoTheme.defaultTextColor(context)),
               ),
-              SizedBox(width: 12),
-              Expanded(
+              const SizedBox(width: 12),
+              const Expanded(
                 child: NeumoProgressIndeterminate(
                   duration: Duration(seconds: 10),
                 ),
               ),
-              SizedBox(width: 12),
+              const SizedBox(width: 12),
             ],
           ),
         ],
@@ -290,6 +293,7 @@ Expanded(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -308,7 +312,7 @@ class _ReversedWidget extends StatefulWidget {
 
 class _ReversedWidgetState extends State<_ReversedWidget> {
   Widget _buildCode(BuildContext context) {
-    return Code("""
+    return const Code("""
 Expanded(
   child: NeumoProgressIndeterminate(
        reverse: true,
@@ -319,25 +323,26 @@ Expanded(
 
   Widget _buildWidget(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       child: Row(
         children: <Widget>[
           Text(
             "Reversed",
             style: TextStyle(color: NeumoTheme.defaultTextColor(context)),
           ),
-          SizedBox(width: 12),
-          Expanded(
+          const SizedBox(width: 12),
+          const Expanded(
             child: NeumoProgressIndeterminate(
               reverse: true,
             ),
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
         ],
       ),
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -356,7 +361,7 @@ class _CurveWidget extends StatefulWidget {
 
 class _CurveWidgetState extends State<_CurveWidget> {
   Widget _buildCode(BuildContext context) {
-    return Code("""
+    return const Code("""
 Expanded(
   child: NeumoProgressIndeterminate(
        curve: Curves.bounceOut,
@@ -367,25 +372,26 @@ Expanded(
 
   Widget _buildWidget(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       child: Row(
         children: <Widget>[
           Text(
             "Curve",
             style: TextStyle(color: NeumoTheme.defaultTextColor(context)),
           ),
-          SizedBox(width: 12),
-          Expanded(
+          const SizedBox(width: 12),
+          const Expanded(
             child: NeumoProgressIndeterminate(
               curve: Curves.bounceOut,
             ),
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
         ],
       ),
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,

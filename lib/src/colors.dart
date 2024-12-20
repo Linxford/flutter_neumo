@@ -83,11 +83,11 @@ class NeumoColors {
 
   static Color _applyPercentageOnOpacity(
       {required Color maxColor, required double percent}) {
-    final maxOpacity = maxColor.opacity;
+    final maxOpacity = maxColor.a;
     const maxIntensity = Neumo.MAX_INTENSITY;
     final newOpacity = percent * maxOpacity / maxIntensity;
     final newColor =
-        maxColor.withOpacity(newOpacity); //<-- intensity act on opacity;
+        maxColor.withValues(alpha: newOpacity); //<-- intensity act on opacity;
     return newColor;
   }
 }

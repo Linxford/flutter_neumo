@@ -3,10 +3,12 @@ import 'package:example/lib/top_bar.dart';
 import 'package:flutter_neumo/flutter_neumo.dart';
 
 class FormSample extends StatelessWidget {
+  const FormSample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return NeumoTheme(
-      theme: NeumoThemeData(
+      theme: const NeumoThemeData(
         defaultTextColor: Color(0xFF3E3E3E),
         accentColor: Colors.grey,
         variantColor: Colors.black38,
@@ -35,7 +37,7 @@ class __PageState extends State<_Page> {
   String lastName = "";
   double age = 12;
   Gender gender;
-  Set<String> rides = Set();
+  Set<String> rides = {};
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +47,7 @@ class __PageState extends State<_Page> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Container(
-              margin: EdgeInsets.only(left: 12, right: 12, top: 10),
+              margin: const EdgeInsets.only(left: 12, right: 12, top: 10),
               child: TopBar(
                 actions: <Widget>[
                   ThemeConfigurator(),
@@ -53,14 +55,14 @@ class __PageState extends State<_Page> {
               ),
             ),
             Neumo(
-              margin: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-              padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+              margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
               style: NeumoStyle(
                 boxShape: NeumoBoxShape.roundRect(BorderRadius.circular(12)),
               ),
               child: Column(
                 children: <Widget>[
-                  SizedBox(
+                  const SizedBox(
                     height: 8,
                   ),
                   Align(
@@ -68,15 +70,15 @@ class __PageState extends State<_Page> {
                     child: NeumoButton(
                       onPressed: _isButtonEnabled() ? () {} : null,
                       padding:
-                          EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                      child: Text(
+                          const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                      child: const Text(
                         "Sign Up",
                         style: TextStyle(fontWeight: FontWeight.w800),
                       ),
                     ),
                   ),
                   _AvatarField(),
-                  SizedBox(
+                  const SizedBox(
                     height: 8,
                   ),
                   _TextField(
@@ -88,7 +90,7 @@ class __PageState extends State<_Page> {
                       });
                     },
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 8,
                   ),
                   _TextField(
@@ -100,18 +102,18 @@ class __PageState extends State<_Page> {
                       });
                     },
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 8,
                   ),
                   _AgeField(
-                    age: this.age,
+                    age: age,
                     onChanged: (age) {
                       setState(() {
                         this.age = age;
                       });
                     },
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 8,
                   ),
                   _GenderField(
@@ -122,7 +124,7 @@ class __PageState extends State<_Page> {
                       });
                     },
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 8,
                   ),
                   /*
@@ -138,7 +140,7 @@ class __PageState extends State<_Page> {
                     height: 28,
                   ),
                    */
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                 ],
@@ -151,7 +153,7 @@ class __PageState extends State<_Page> {
   }
 
   bool _isButtonEnabled() {
-    return this.firstName.isNotEmpty && this.lastName.isNotEmpty;
+    return firstName.isNotEmpty && lastName.isNotEmpty;
   }
 }
 
@@ -160,9 +162,9 @@ class _AvatarField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Neumo(
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         style: NeumoStyle(
-          boxShape: NeumoBoxShape.circle(),
+          boxShape: const NeumoBoxShape.circle(),
           depth: NeumoTheme.embossDepth(context),
         ),
         child: Icon(
@@ -179,7 +181,7 @@ class _AgeField extends StatelessWidget {
   final double age;
   final ValueChanged<double> onChanged;
 
-  _AgeField({@required this.age, this.onChanged});
+  const _AgeField({@required this.age, this.onChanged});
 
   @override
   Widget build(BuildContext context) {
@@ -204,15 +206,15 @@ class _AgeField extends StatelessWidget {
                 child: NeumoSlider(
                   min: 8,
                   max: 75,
-                  value: this.age,
+                  value: age,
                   onChanged: (value) {
-                    this.onChanged(value);
+                    onChanged(value);
                   },
                 ),
               ),
             ),
-            Text("${this.age.floor()}"),
-            SizedBox(
+            Text("${age.floor()}"),
+            const SizedBox(
               width: 18,
             )
           ],
@@ -228,7 +230,7 @@ class _TextField extends StatefulWidget {
 
   final ValueChanged<String> onChanged;
 
-  _TextField({@required this.label, @required this.hint, this.onChanged});
+  const _TextField({@required this.label, @required this.hint, this.onChanged});
 
   @override
   __TextFieldState createState() => __TextFieldState();
@@ -251,7 +253,7 @@ class __TextFieldState extends State<_TextField> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8),
           child: Text(
-            this.widget.label,
+            widget.label,
             style: TextStyle(
               fontWeight: FontWeight.w700,
               color: NeumoTheme.defaultTextColor(context),
@@ -259,16 +261,16 @@ class __TextFieldState extends State<_TextField> {
           ),
         ),
         Neumo(
-          margin: EdgeInsets.only(left: 8, right: 8, top: 2, bottom: 4),
+          margin: const EdgeInsets.only(left: 8, right: 8, top: 2, bottom: 4),
           style: NeumoStyle(
             depth: NeumoTheme.embossDepth(context),
-            boxShape: NeumoBoxShape.stadium(),
+            boxShape: const NeumoBoxShape.stadium(),
           ),
-          padding: EdgeInsets.symmetric(vertical: 14, horizontal: 18),
+          padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 18),
           child: TextField(
-            onChanged: this.widget.onChanged,
+            onChanged: widget.onChanged,
             controller: _controller,
-            decoration: InputDecoration.collapsed(hintText: this.widget.hint),
+            decoration: InputDecoration.collapsed(hintText: widget.hint),
           ),
         )
       ],
@@ -302,40 +304,40 @@ class _GenderField extends StatelessWidget {
         ),
         Row(
           children: <Widget>[
-            SizedBox(width: 12),
+            const SizedBox(width: 12),
             NeumoRadio(
-              groupValue: this.gender,
-              padding: EdgeInsets.all(20),
-              style: NeumoRadioStyle(
+              groupValue: gender,
+              padding: const EdgeInsets.all(20),
+              style: const NeumoRadioStyle(
                 boxShape: NeumoBoxShape.circle(),
               ),
               value: Gender.MALE,
-              child: Icon(Icons.account_box),
-              onChanged: (value) => this.onChanged(value),
+              child: const Icon(Icons.account_box),
+              onChanged: (value) => onChanged(value),
             ),
-            SizedBox(width: 12),
+            const SizedBox(width: 12),
             NeumoRadio(
-              groupValue: this.gender,
-              padding: EdgeInsets.all(20),
-              style: NeumoRadioStyle(
+              groupValue: gender,
+              padding: const EdgeInsets.all(20),
+              style: const NeumoRadioStyle(
                 boxShape: NeumoBoxShape.circle(),
               ),
               value: Gender.FEMALE,
-              child: Icon(Icons.pregnant_woman),
-              onChanged: (value) => this.onChanged(value),
+              child: const Icon(Icons.pregnant_woman),
+              onChanged: (value) => onChanged(value),
             ),
-            SizedBox(width: 12),
+            const SizedBox(width: 12),
             NeumoRadio(
-              groupValue: this.gender,
-              padding: EdgeInsets.all(20),
-              style: NeumoRadioStyle(
+              groupValue: gender,
+              padding: const EdgeInsets.all(20),
+              style: const NeumoRadioStyle(
                 boxShape: NeumoBoxShape.circle(),
               ),
               value: Gender.NON_BINARY,
-              child: Icon(Icons.supervised_user_circle),
-              onChanged: (value) => this.onChanged(value),
+              child: const Icon(Icons.supervised_user_circle),
+              onChanged: (value) => onChanged(value),
             ),
-            SizedBox(
+            const SizedBox(
               width: 18,
             )
           ],

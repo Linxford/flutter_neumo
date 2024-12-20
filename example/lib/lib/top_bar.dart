@@ -8,7 +8,7 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
 
   static const double kToolbarHeight = 110.0;
 
-  const TopBar({this.title = "", this.actions});
+  const TopBar({super.key, this.title = "", this.actions});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
           Align(alignment: Alignment.centerLeft, child: NeumoBack()),
           Center(
             child: Text(
-              this.title,
+              title,
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w800,
@@ -42,5 +42,5 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }

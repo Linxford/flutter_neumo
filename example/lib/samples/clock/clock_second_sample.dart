@@ -2,10 +2,12 @@ import 'package:example/lib/top_bar.dart';
 import 'package:flutter_neumo/flutter_neumo.dart';
 
 class ClockAlarmPage extends StatelessWidget {
+  const ClockAlarmPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return NeumoTheme(
-      theme: NeumoThemeData(
+      theme: const NeumoThemeData(
           defaultTextColor: Color(0xFF303E57),
           accentColor: Color(0xFF7B79FC),
           variantColor: Colors.black38,
@@ -30,22 +32,22 @@ class _Page extends StatefulWidget {
 
 class _ClockPageState extends State<_Page> {
   final List<Alarm> items = [
-    Alarm(
+    const Alarm(
       enabled: true,
       time: "8:30 AM",
       label: "Awake !",
     ),
-    Alarm(
+    const Alarm(
       enabled: false,
       time: "8:45 AM",
       label: "Wake up !",
     ),
-    Alarm(
+    const Alarm(
       enabled: false,
       time: "9:00 AM",
       label: "Hurry up !",
     ),
-    Alarm(
+    const Alarm(
       enabled: false,
       time: "2:00 AM",
       label: "Lunchtime",
@@ -54,12 +56,12 @@ class _ClockPageState extends State<_Page> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return const SafeArea(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.only(left: 8.0, right: 8.0, top: 9.0),
+            padding: EdgeInsets.only(left: 8.0, right: 8.0, top: 9.0),
             child: TopBar(),
           ),
           Padding(
@@ -94,14 +96,14 @@ class _ClockPageState extends State<_Page> {
                     ),
                     child: NeumoButton(
                       padding: EdgeInsets.all(12.0),
-                      child: Icon(
-                        Icons.add,
-                        color: Color(0xFFC1CDE5),
-                      ),
                       style: NeumoStyle(
                         depth: -1,
                         boxShape:
                             NeumoBoxShape.roundRect(BorderRadius.circular(8)),
+                      ),
+                      child: Icon(
+                        Icons.add,
+                        color: Color(0xFFC1CDE5),
                       ),
                     ),
                   ),
@@ -116,7 +118,7 @@ class _ClockPageState extends State<_Page> {
           Expanded(
             child: ListView.builder(
               itemBuilder: (context, index) {
-                return AlarmCell(this.items[index]);
+                return AlarmCell(items[index]);
               },
               itemCount: items.length,
             ),
@@ -130,7 +132,7 @@ class _ClockPageState extends State<_Page> {
 class AlarmCell extends StatelessWidget {
   final Alarm alarm;
 
-  AlarmCell(this.alarm);
+  const AlarmCell(this.alarm, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -150,7 +152,7 @@ class AlarmCell extends StatelessWidget {
                       style: TextStyle(
                         fontWeight: FontWeight.w700,
                         fontSize: 36,
-                        shadows: [
+                        shadows: const [
                           Shadow(
                               color: Colors.black38,
                               offset: Offset(1.0, 1.0),
@@ -159,7 +161,7 @@ class AlarmCell extends StatelessWidget {
                         color: NeumoTheme.defaultTextColor(context),
                       ),
                     ),
-                    SizedBox(height: 4),
+                    const SizedBox(height: 4),
                     Text(
                       alarm.label,
                       style: TextStyle(
@@ -177,15 +179,15 @@ class AlarmCell extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: <Widget>[
                     Padding(
-                      padding: EdgeInsets.only(right: 20),
+                      padding: const EdgeInsets.only(right: 20),
                       child: Neumo(
-                        style: NeumoStyle(
+                        style: const NeumoStyle(
                           depth: 8,
                           intensity: 0.5,
                           boxShape: NeumoBoxShape.stadium(),
                         ),
                         child: NeumoSwitch(
-                          style: NeumoSwitchStyle(
+                          style: const NeumoSwitchStyle(
                               inactiveTrackColor: Color(0xffC1CDE5)),
                           height: 30,
                           value: alarm.enabled,
@@ -207,7 +209,7 @@ class AlarmCell extends StatelessWidget {
 class _Divider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return FractionallySizedBox(
+    return const FractionallySizedBox(
       widthFactor: 1,
       child: Neumo(
         margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),

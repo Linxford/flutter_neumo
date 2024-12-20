@@ -7,7 +7,7 @@ import 'package:flutter_neumo/flutter_neumo.dart';
 import 'dart:math' show Random;
 
 class IndicatorWidgetPage extends StatefulWidget {
-  IndicatorWidgetPage({Key key}) : super(key: key);
+  const IndicatorWidgetPage({Key key}) : super(key: key);
 
   @override
   createState() => _WidgetPageState();
@@ -18,7 +18,7 @@ class _WidgetPageState extends State<IndicatorWidgetPage> {
   Widget build(BuildContext context) {
     return NeumoTheme(
       themeMode: ThemeMode.light,
-      theme: NeumoThemeData(
+      theme: const NeumoThemeData(
         lightSource: LightSource.topLeft,
         accentColor: NeumoColors.accent,
         depth: 4,
@@ -38,7 +38,7 @@ class _PageState extends State<_Page> {
   @override
   Widget build(BuildContext context) {
     return NeumoBackground(
-      padding: EdgeInsets.all(8),
+      padding: const EdgeInsets.all(8),
       child: Scaffold(
         appBar: TopBar(
           title: "Indicator",
@@ -58,7 +58,7 @@ class _PageState extends State<_Page> {
               _DurationWidget(),
               _ColorWidget(),
               _CurveWidget(),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
             ],
           ),
         ),
@@ -76,7 +76,7 @@ class _DefaultWidgetState extends State<_DefaultWidget> {
   double percent = 0.6;
 
   Widget _buildCode(BuildContext context) {
-    return Code("""
+    return const Code("""
 NeumoIndicator(
     height: 100,
     width: 20,
@@ -87,22 +87,22 @@ NeumoIndicator(
 
   Widget _buildWidget(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       child: Row(
         children: <Widget>[
           Text(
             "Default",
             style: TextStyle(color: NeumoTheme.defaultTextColor(context)),
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           NeumoIndicator(
             height: 100,
             width: 20,
             percent: percent,
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           FlatButton(
-              child: Text('Update'),
+              child: const Text('Update'),
               onPressed: () {
                 setState(() {
                   percent = Random().nextDouble();
@@ -113,6 +113,7 @@ NeumoIndicator(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -131,7 +132,7 @@ class _DefaultOrientationWidget extends StatefulWidget {
 
 class _DefaultOrientationWidgetState extends State<_DefaultOrientationWidget> {
   Widget _buildCode(BuildContext context) {
-    return Code("""
+    return const Code("""
 NeumoIndicator(
      width: 150,
      height: 15,
@@ -143,26 +144,27 @@ NeumoIndicator(
 
   Widget _buildWidget(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       child: Row(
         children: <Widget>[
           Text(
             "Orientation\nHorizontal",
             style: TextStyle(color: NeumoTheme.defaultTextColor(context)),
           ),
-          SizedBox(width: 12),
-          NeumoIndicator(
+          const SizedBox(width: 12),
+          const NeumoIndicator(
             width: 150,
             height: 15,
             orientation: NeumoIndicatorOrientation.horizontal,
             percent: 0.7,
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
         ],
       ),
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -181,7 +183,7 @@ class _ColorWidget extends StatefulWidget {
 
 class _ColorWidgetState extends State<_ColorWidget> {
   Widget _buildCode(BuildContext context) {
-    return Code("""
+    return const Code("""
 NeumoIndicator(
       width: 150,
       height: 15,
@@ -200,12 +202,12 @@ NeumoIndicator(
 
   Widget _buildWidget(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       child: Column(
         children: <Widget>[
           Row(
             children: <Widget>[
-              Text("Accent : "),
+              const Text("Accent : "),
               ColorSelector(
                 onColorChanged: (color) {
                   setState(() {
@@ -214,8 +216,8 @@ NeumoIndicator(
                 },
                 color: accent,
               ),
-              SizedBox(width: 12),
-              Text("Variant : "),
+              const SizedBox(width: 12),
+              const Text("Variant : "),
               ColorSelector(
                 onColorChanged: (color) {
                   setState(() {
@@ -226,14 +228,14 @@ NeumoIndicator(
               ),
             ],
           ),
-          SizedBox(height: 12),
+          const SizedBox(height: 12),
           Row(
             children: <Widget>[
               Text(
                 "Colorized",
                 style: TextStyle(color: NeumoTheme.defaultTextColor(context)),
               ),
-              SizedBox(width: 12),
+              const SizedBox(width: 12),
               NeumoIndicator(
                 width: 150,
                 height: 15,
@@ -241,7 +243,7 @@ NeumoIndicator(
                 percent: 0.7,
                 style: IndicatorStyle(variant: variant, accent: accent),
               ),
-              SizedBox(width: 12),
+              const SizedBox(width: 12),
             ],
           ),
         ],
@@ -249,6 +251,7 @@ NeumoIndicator(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -269,7 +272,7 @@ class _DurationWidgetState extends State<_DurationWidget> {
   double percent = 0.3;
 
   Widget _buildCode(BuildContext context) {
-    return Code("""
+    return const Code("""
 NeumoIndicator(
     height: 100,
     width: 20,
@@ -281,23 +284,23 @@ NeumoIndicator(
 
   Widget _buildWidget(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       child: Row(
         children: <Widget>[
           Text(
             "Duration",
             style: TextStyle(color: NeumoTheme.defaultTextColor(context)),
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           NeumoIndicator(
             height: 100,
             width: 20,
             percent: percent,
-            duration: Duration(seconds: 1),
+            duration: const Duration(seconds: 1),
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           FlatButton(
-              child: Text('Update'),
+              child: const Text('Update'),
               onPressed: () {
                 setState(() {
                   percent = Random().nextDouble();
@@ -308,6 +311,7 @@ NeumoIndicator(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -328,7 +332,7 @@ class _CurveWidgetState extends State<_CurveWidget> {
   double percent = 0.3;
 
   Widget _buildCode(BuildContext context) {
-    return Code("""
+    return const Code("""
 NeumoIndicator(
     height: 100,
     width: 20,
@@ -340,22 +344,22 @@ NeumoIndicator(
 
   Widget _buildWidget(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       child: Row(
         children: <Widget>[
           Text(
             "Curve",
             style: TextStyle(color: NeumoTheme.defaultTextColor(context)),
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           NeumoIndicator(
               height: 100,
               width: 20,
               percent: percent,
               curve: Curves.bounceOut),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           FlatButton(
-              child: Text('Update'),
+              child: const Text('Update'),
               onPressed: () {
                 setState(() {
                   percent = Random().nextDouble();
@@ -366,6 +370,7 @@ NeumoIndicator(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,

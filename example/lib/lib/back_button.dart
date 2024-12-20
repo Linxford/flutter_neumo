@@ -1,11 +1,13 @@
 import 'package:flutter_neumo/flutter_neumo.dart';
 
 class NeumoBack extends StatelessWidget {
+  const NeumoBack({super.key});
+
   @override
   Widget build(BuildContext context) {
     return NeumoButton(
-      padding: EdgeInsets.all(18),
-      style: NeumoStyle(
+      padding: const EdgeInsets.all(18),
+      style: const NeumoStyle(
         boxShape: NeumoBoxShape.circle(),
         shape: NeumoShape.flat,
       ),

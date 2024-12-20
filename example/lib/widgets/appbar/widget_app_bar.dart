@@ -1,7 +1,7 @@
 import 'package:flutter_neumo/flutter_neumo.dart';
 
 class AppBarWidgetPage extends StatelessWidget {
-  AppBarWidgetPage({Key key}) : super(key: key);
+  const AppBarWidgetPage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class _FirstThemeWidgetPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return NeumoTheme(
       themeMode: ThemeMode.light,
-      theme: NeumoThemeData(
+      theme: const NeumoThemeData(
         lightSource: LightSource.topLeft,
         accentColor: NeumoColors.accent,
         appBarTheme: NeumoAppBarThemeData(
@@ -49,8 +49,8 @@ class _SecondThemeWidgetPage extends StatelessWidget {
         appBarTheme: NeumoAppBarThemeData(
           buttonStyle: NeumoStyle(
               boxShape: NeumoBoxShape.beveled(BorderRadius.circular(12))),
-          textStyle: TextStyle(color: Colors.black54),
-          iconTheme: IconThemeData(color: Colors.black54, size: 30),
+          textStyle: const TextStyle(color: Colors.black54),
+          iconTheme: const IconThemeData(color: Colors.black54, size: 30),
         ),
         depth: 4,
         intensity: 0.9,
@@ -72,8 +72,8 @@ class _ThirdThemeWidgetPage extends StatelessWidget {
           buttonStyle: NeumoStyle(
               color: Colors.black54,
               boxShape: NeumoBoxShape.roundRect(BorderRadius.circular(12))),
-          textStyle: TextStyle(color: Colors.black54, fontSize: 20),
-          iconTheme: IconThemeData(color: Colors.white, size: 20),
+          textStyle: const TextStyle(color: Colors.black54, fontSize: 20),
+          iconTheme: const IconThemeData(color: Colors.white, size: 20),
         ),
         depth: 4,
         intensity: 0.9,
@@ -84,16 +84,18 @@ class _ThirdThemeWidgetPage extends StatelessWidget {
 }
 
 class AppBarPageUsingTheme extends StatelessWidget {
+  const AppBarPageUsingTheme({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 100,
       child: Scaffold(
           appBar: NeumoAppBar(
-            title: Text("App bar"),
+            title: const Text("App bar"),
             actions: <Widget>[
               NeumoButton(
-                child: Icon(Icons.add),
+                child: const Icon(Icons.add),
                 onPressed: () {},
               ),
             ],
@@ -104,18 +106,20 @@ class AppBarPageUsingTheme extends StatelessWidget {
 }
 
 class SizedAppBarPageUsingTheme extends StatelessWidget {
+  const SizedAppBarPageUsingTheme({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 100,
       child: Scaffold(
           appBar: PreferredSize(
-            preferredSize: Size.fromHeight(60.0),
+            preferredSize: const Size.fromHeight(60.0),
             child: NeumoAppBar(
-              title: Text("App bar custom size"),
+              title: const Text("App bar custom size"),
               actions: <Widget>[
                 NeumoButton(
-                  child: Icon(Icons.add),
+                  child: const Icon(Icons.add),
                   onPressed: () {},
                 ),
               ],
@@ -127,16 +131,18 @@ class SizedAppBarPageUsingTheme extends StatelessWidget {
 }
 
 class FirstThemeContent extends StatelessWidget {
+  const FirstThemeContent({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 100,
       child: Scaffold(
           appBar: NeumoAppBar(
-            title: Text("App bar"),
+            title: const Text("App bar"),
             actions: <Widget>[
               NeumoButton(
-                child: Icon(Icons.add),
+                child: const Icon(Icons.add),
                 onPressed: () {},
               ),
             ],
@@ -160,20 +166,20 @@ class _MyDrawer extends StatelessWidget {
           children: [
             ConstrainedBox(
               constraints:
-                  BoxConstraints.tightFor(height: NeumoAppBar.toolbarHeight),
+                  const BoxConstraints.tightFor(height: NeumoAppBar.toolbarHeight),
               child: NeumoAppBar(
-                title: Text('Menu'),
-                leading: isLead ? NeumoBackButton() : NeumoCloseButton(),
+                title: const Text('Menu'),
+                leading: isLead ? const NeumoBackButton() : const NeumoCloseButton(),
                 actions: <Widget>[
                   NeumoButton(
-                    child: Icon(Icons.style),
+                    child: const Icon(Icons.style),
                     onPressed: () {},
                   ),
-                  isLead ? NeumoCloseButton() : NeumoBackButton(forward: true),
+                  isLead ? const NeumoCloseButton() : const NeumoBackButton(forward: true),
                 ],
               ),
             ),
-            Spacer(),
+            const Spacer(),
           ],
         ),
       ),
@@ -184,7 +190,7 @@ class _MyDrawer extends StatelessWidget {
 class _CustomIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return const SizedBox(
       height: 300,
       child: NeumoTheme(
         themeMode: ThemeMode.light,

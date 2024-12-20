@@ -7,7 +7,7 @@ name: Publish
 on:
   push:
     branches: [ master ]
-  
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -18,12 +18,28 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Publish
-      uses: sakebook/actions-flutter-pub-publisher@v1.3.0
+    - uses: actions/checkout@v4
+
+    - name: Setup Flutter
+      uses: subosito/flutter-action@v2
       with:
-        credential: ${{ secrets.CREDENTIAL_JSON }}
-        flutter_package: true
-        skip_test: true
-        dry_run: false
+        channel: 'stable'
+
+    - name: Install dependencies
+      run: flutter pub get
+
+    - name: Format code
+      run: flutter format --set-exit-if-changed .
+
+    - name: Analyze code
+      run: flutter analyze --fatal-infos
+
+    - name: Run tests
+      run: flutter test
+
+    - name: Publish
+      uses: k-paxian/dart-package-publisher@v1.5
+      with:
+        credentialJson: ${{ secrets.CREDENTIAL_JSON }}
+        flutter: true
+        skipTests: true

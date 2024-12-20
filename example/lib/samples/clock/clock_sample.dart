@@ -4,10 +4,12 @@ import 'package:flutter_neumo/flutter_neumo.dart';
 import 'clock_second_sample.dart';
 
 class ClockSample extends StatelessWidget {
+  const ClockSample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return NeumoTheme(
-      theme: NeumoThemeData(
+      theme: const NeumoThemeData(
           defaultTextColor: Color(0xFF303E57),
           accentColor: Color(0xFF7B79FC),
           variantColor: Colors.black38,
@@ -33,12 +35,12 @@ class _ClockFirstPage extends StatefulWidget {
 class _ClockFirstPageState extends State<_ClockFirstPage> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return const SafeArea(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.only(left: 8.0, right: 8.0, top: 9.0),
+            padding: EdgeInsets.only(left: 8.0, right: 8.0, top: 9.0),
             child: TopBar(),
           ),
           Padding(
@@ -73,10 +75,6 @@ class _ClockFirstPageState extends State<_ClockFirstPage> {
                     ),
                     child: NeumoButton(
                       padding: EdgeInsets.all(12.0),
-                      child: Icon(
-                        Icons.add,
-                        color: Color(0xFFC1CDE5),
-                      ),
                       onPressed: () {
                         Navigator.of(context)
                             .push(MaterialPageRoute(builder: (context) {
@@ -87,6 +85,10 @@ class _ClockFirstPageState extends State<_ClockFirstPage> {
                           depth: -1,
                           boxShape: NeumoBoxShape.roundRect(
                               BorderRadius.circular(8))),
+                      child: Icon(
+                        Icons.add,
+                        color: Color(0xFFC1CDE5),
+                      ),
                     ),
                   ),
                 ),
@@ -127,33 +129,35 @@ class _ClockFirstPageState extends State<_ClockFirstPage> {
 }
 
 class NeumoClock extends StatelessWidget {
+  const NeumoClock({super.key});
+
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
       aspectRatio: 1,
       child: Neumo(
-        margin: EdgeInsets.all(14),
-        style: NeumoStyle(
+        margin: const EdgeInsets.all(14),
+        style: const NeumoStyle(
           boxShape: NeumoBoxShape.circle(),
         ),
         child: Neumo(
-          style: NeumoStyle(
+          style: const NeumoStyle(
             depth: 14,
             boxShape: NeumoBoxShape.circle(),
           ),
-          margin: EdgeInsets.all(20),
+          margin: const EdgeInsets.all(20),
           child: Neumo(
-            style: NeumoStyle(
+            style: const NeumoStyle(
               depth: -8,
               boxShape: NeumoBoxShape.circle(),
             ),
-            margin: EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
             child: Stack(
               fit: StackFit.expand,
               alignment: Alignment.center,
               children: [
                 //the click center
-                Neumo(
+                const Neumo(
                   style: NeumoStyle(
                     depth: -1,
                     boxShape: NeumoBoxShape.circle(),
@@ -174,19 +178,19 @@ class NeumoClock extends StatelessWidget {
                         child: _createDot(context),
                       ),
                       Align(
-                        alignment: Alignment(-0.7, -0.7),
+                        alignment: const Alignment(-0.7, -0.7),
                         child: _createDot(context),
                       ),
                       Align(
-                        alignment: Alignment(0.7, -0.7),
+                        alignment: const Alignment(0.7, -0.7),
                         child: _createDot(context),
                       ),
                       Align(
-                        alignment: Alignment(-0.7, 0.7),
+                        alignment: const Alignment(-0.7, 0.7),
                         child: _createDot(context),
                       ),
                       Align(
-                        alignment: Alignment(0.7, 0.7),
+                        alignment: const Alignment(0.7, 0.7),
                         child: _createDot(context),
                       ),
                       Align(
@@ -239,7 +243,7 @@ class NeumoClock extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.only(left: width),
           child: Neumo(
-            style: NeumoStyle(
+            style: const NeumoStyle(
               depth: 20,
             ),
             child: Container(
@@ -254,7 +258,7 @@ class NeumoClock extends StatelessWidget {
   }
 
   Widget _createDot(BuildContext context) {
-    return Neumo(
+    return const Neumo(
       style: NeumoStyle(
         depth: -10,
         boxShape: NeumoBoxShape.circle(),
@@ -271,9 +275,11 @@ class NeumoSelector extends StatelessWidget {
   final double _elementHeight = 14;
   final double _spacing = 10;
 
+  const NeumoSelector({super.key});
+
   Widget _buildSimpleButton(BuildContext context) {
     return Neumo(
-      style: NeumoStyle(
+      style: const NeumoStyle(
         depth: -4,
         boxShape: NeumoBoxShape.circle(),
       ),
@@ -286,7 +292,7 @@ class NeumoSelector extends StatelessWidget {
 
   Widget _buildSelectedButton(BuildContext context) {
     return Neumo(
-      style: NeumoStyle(
+      style: const NeumoStyle(
         depth: -4,
         boxShape: NeumoBoxShape.stadium(),
         color: Color(0xffE1E8F5),

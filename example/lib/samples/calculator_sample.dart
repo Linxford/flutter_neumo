@@ -1,17 +1,19 @@
 import 'package:flutter_neumo/flutter_neumo.dart';
 
 class CalculatorSample extends StatefulWidget {
+  const CalculatorSample({super.key});
+
   @override
   createState() => _CalculatorSampleState();
 }
 
-final Color _calcTextColor = Color(0xFF484848);
+final Color _calcTextColor = const Color(0xFF484848);
 
 class _CalculatorSampleState extends State<CalculatorSample> {
   @override
   Widget build(BuildContext context) {
     return NeumoTheme(
-      theme: NeumoThemeData(
+      theme: const NeumoThemeData(
         baseColor: Color(0xFFF4F5F5),
         intensity: 0.3,
         lightSource: LightSource.topLeft,
@@ -49,7 +51,7 @@ class CalcButton {
 class WidgetCalcButton extends StatelessWidget {
   final CalcButton button;
 
-  WidgetCalcButton(this.button);
+  const WidgetCalcButton(this.button, {super.key});
 
   Color _textColor(BuildContext context) {
     if (button.backgroundAccent) {
@@ -70,12 +72,12 @@ class WidgetCalcButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 14),
+      padding: const EdgeInsets.only(top: 14),
       child: NeumoButton(
         onPressed: () {},
         style: NeumoStyle(
           surfaceIntensity: 0.15,
-          boxShape: NeumoBoxShape.circle(),
+          boxShape: const NeumoBoxShape.circle(),
           shape: NeumoShape.concave,
           color: _backgroundColor(context),
         ),
@@ -162,12 +164,12 @@ class __PageContentState extends State<_PageContent> {
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
-                style: NeumoStyle(
+                style: const NeumoStyle(
                   shape: NeumoShape.flat,
                   boxShape: NeumoBoxShape.circle(),
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.all(12.0),
+                child: const Padding(
+                  padding: EdgeInsets.all(12.0),
                   child: Icon(Icons.navigate_before),
                 ),
               ),
@@ -198,28 +200,28 @@ class __PageContentState extends State<_PageContent> {
               RaisedButton(
                 onPressed: () {
                   setState(() {
-                    NeumoTheme.of(context).updateCurrentTheme(NeumoThemeData(
+                    NeumoTheme.of(context).updateCurrentTheme(const NeumoThemeData(
                       depth: 1,
                       intensity: 0.5,
                       accentColor: Colors.cyan,
                     ));
                   });
                 },
-                child: Text(
+                child: const Text(
                   "style 1",
                 ),
               ),
               RaisedButton(
                 onPressed: () {
                   setState(() {
-                    NeumoTheme.of(context).updateCurrentTheme(NeumoThemeData(
+                    NeumoTheme.of(context).updateCurrentTheme(const NeumoThemeData(
                       depth: 8,
                       intensity: 0.3,
                       accentColor: Colors.greenAccent,
                     ));
                   });
                 },
-                child: Text(
+                child: const Text(
                   "style 2",
                 ),
               ),

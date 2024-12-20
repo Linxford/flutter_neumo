@@ -4,7 +4,7 @@ import 'package:example/lib/top_bar.dart';
 import 'package:flutter_neumo/flutter_neumo.dart';
 
 class ToggleWidgetPage extends StatefulWidget {
-  ToggleWidgetPage({Key key}) : super(key: key);
+  const ToggleWidgetPage({Key key}) : super(key: key);
 
   @override
   createState() => _WidgetPageState();
@@ -15,7 +15,7 @@ class _WidgetPageState extends State<ToggleWidgetPage> {
   Widget build(BuildContext context) {
     return NeumoTheme(
       themeMode: ThemeMode.light,
-      theme: NeumoThemeData(
+      theme: const NeumoThemeData(
         lightSource: LightSource.topLeft,
         accentColor: NeumoColors.accent,
         depth: 4,
@@ -35,7 +35,7 @@ class _PageState extends State<_Page> {
   @override
   Widget build(BuildContext context) {
     return NeumoBackground(
-      padding: EdgeInsets.all(8),
+      padding: const EdgeInsets.all(8),
       child: Scaffold(
         appBar: TopBar(
           title: "Toggle",
@@ -52,7 +52,7 @@ class _PageState extends State<_Page> {
             children: [
               _DefaultWidget(),
               _SmallWidget(),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
             ],
           ),
         ),
@@ -106,7 +106,7 @@ Expanded(
 
   Widget _buildWidget(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       child: Row(
         mainAxisSize: MainAxisSize.max,
         children: <Widget>[
@@ -114,47 +114,47 @@ Expanded(
             "Default",
             style: TextStyle(color: NeumoTheme.defaultTextColor(context)),
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           Expanded(
             child: NeumoToggle(
               height: 50,
-              style: NeumoToggleStyle(
+              style: const NeumoToggleStyle(
                   //backgroundColor: Colors.red,
                   ),
               selectedIndex: _selectedIndex,
               displayForegroundOnlyIfSelected: true,
               children: [
                 ToggleElement(
-                  background: Center(
+                  background: const Center(
                       child: Text(
                     "This week",
                     style: TextStyle(fontWeight: FontWeight.w500),
                   )),
-                  foreground: Center(
+                  foreground: const Center(
                       child: Text(
                     "This week",
                     style: TextStyle(fontWeight: FontWeight.w700),
                   )),
                 ),
                 ToggleElement(
-                  background: Center(
+                  background: const Center(
                       child: Text(
                     "This month",
                     style: TextStyle(fontWeight: FontWeight.w500),
                   )),
-                  foreground: Center(
+                  foreground: const Center(
                       child: Text(
                     "This month",
                     style: TextStyle(fontWeight: FontWeight.w700),
                   )),
                 ),
                 ToggleElement(
-                  background: Center(
+                  background: const Center(
                       child: Text(
                     "This year",
                     style: TextStyle(fontWeight: FontWeight.w500),
                   )),
-                  foreground: Center(
+                  foreground: const Center(
                       child: Text(
                     "This year",
                     style: TextStyle(fontWeight: FontWeight.w700),
@@ -164,7 +164,7 @@ Expanded(
               thumb: Neumo(
                 style: NeumoStyle(
                   boxShape: NeumoBoxShape.roundRect(
-                      BorderRadius.all(Radius.circular(12))),
+                      const BorderRadius.all(Radius.circular(12))),
                 ),
               ),
               onChanged: (value) {
@@ -180,6 +180,7 @@ Expanded(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -235,7 +236,7 @@ NeumoToggle(
 
   Widget _buildWidget(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       child: Row(
         mainAxisSize: MainAxisSize.max,
         children: <Widget>[
@@ -243,7 +244,7 @@ NeumoToggle(
             "Small",
             style: TextStyle(color: NeumoTheme.defaultTextColor(context)),
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           NeumoToggle(
             height: 45,
             width: 100,
@@ -261,10 +262,10 @@ NeumoToggle(
             thumb: Neumo(
               style: NeumoStyle(
                 boxShape: NeumoBoxShape.roundRect(
-                  BorderRadius.all(Radius.circular(12)),
+                  const BorderRadius.all(Radius.circular(12)),
                 ),
               ),
-              child: Icon(
+              child: const Icon(
                 Icons.blur_on,
                 color: Colors.grey,
               ),
@@ -272,7 +273,7 @@ NeumoToggle(
             onAnimationChangedFinished: (value) {
               if (value == 0) {
                 Scaffold.of(context)
-                    .showSnackBar(SnackBar(content: Text('on back !')));
+                    .showSnackBar(const SnackBar(content: Text('on back !')));
                 print("onAnimationChangedFinished: $_selectedIndex");
               }
             },
@@ -288,6 +289,7 @@ NeumoToggle(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,

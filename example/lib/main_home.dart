@@ -22,7 +22,7 @@ class NeumoAppBar extends StatefulWidget implements PreferredSizeWidget {
   final Size preferredSize;
 
   const NeumoAppBar({
-    Key? key,
+    super.key,
     this.title,
     this.leading,
     this.centerTitle,
@@ -36,8 +36,7 @@ class NeumoAppBar extends StatefulWidget implements PreferredSizeWidget {
     this.buttonPadding,
     this.titleTextStyle,
     this.padding = 16.0,
-  })  : preferredSize = const Size.fromHeight(toolbarHeight),
-        super(key: key);
+  })  : preferredSize = const Size.fromHeight(toolbarHeight);
 
   @override
   State<NeumoAppBar> createState() => _NeumoAppBarState();
@@ -62,9 +61,9 @@ class _NeumoAppBarState extends State<NeumoAppBar> {
         leading = NeumoButton(
           padding: widget.buttonPadding,
           style: widget.buttonStyle,
-          child: Icon(Icons.menu),
           onPressed: _openDrawer,
           tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+          child: Icon(Icons.menu),
         );
       } else if (canPop) {
         leading = useCloseButton
@@ -117,9 +116,9 @@ class _NeumoAppBarState extends State<NeumoAppBar> {
         child: NeumoButton(
           padding: widget.buttonPadding,
           style: widget.buttonStyle,
-          child: Icon(Icons.menu),
           onPressed: _openEndDrawer,
           tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+          child: Icon(Icons.menu),
         ),
       );
     }

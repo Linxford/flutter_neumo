@@ -4,7 +4,7 @@ import 'package:example/lib/top_bar.dart';
 import 'package:flutter_neumo/flutter_neumo.dart';
 
 class RadioButtonWidgetPage extends StatefulWidget {
-  RadioButtonWidgetPage({Key key}) : super(key: key);
+  const RadioButtonWidgetPage({Key key}) : super(key: key);
 
   @override
   createState() => _WidgetPageState();
@@ -15,7 +15,7 @@ class _WidgetPageState extends State<RadioButtonWidgetPage> {
   Widget build(BuildContext context) {
     return NeumoTheme(
       themeMode: ThemeMode.light,
-      theme: NeumoThemeData(
+      theme: const NeumoThemeData(
         lightSource: LightSource.topLeft,
         accentColor: NeumoColors.accent,
         depth: 4,
@@ -35,7 +35,7 @@ class _PageState extends State<_Page> {
   @override
   Widget build(BuildContext context) {
     return NeumoBackground(
-      padding: EdgeInsets.all(8),
+      padding: const EdgeInsets.all(8),
       child: Scaffold(
         appBar: TopBar(
           title: "Radios",
@@ -53,7 +53,7 @@ class _PageState extends State<_Page> {
               _DefaultWidget(),
               CircleRadios(),
               _EnabledDisabledWidget(),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
             ],
           ),
         ),
@@ -71,7 +71,7 @@ class _DefaultWidgetState extends State<_DefaultWidget> {
   int groupValue;
 
   Widget _buildCode(BuildContext context) {
-    return Code("""
+    return const Code("""
 int groupValue;
 
 NeumoRadio(
@@ -89,14 +89,14 @@ NeumoRadio(
 
   Widget _buildWidget(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       child: Row(
         children: <Widget>[
           Text(
             "Default",
             style: TextStyle(color: NeumoTheme.defaultTextColor(context)),
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           NeumoRadio(
             //uncomment to test colors
             //style: NeumoRadioStyle(
@@ -110,10 +110,10 @@ NeumoRadio(
                 groupValue = value;
               });
             },
-            padding: EdgeInsets.all(8.0),
-            child: Text("1991"),
+            padding: const EdgeInsets.all(8.0),
+            child: const Text("1991"),
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           NeumoRadio(
             value: 2000,
             groupValue: groupValue,
@@ -122,10 +122,10 @@ NeumoRadio(
                 groupValue = value;
               });
             },
-            padding: EdgeInsets.all(8.0),
-            child: Text("2000"),
+            padding: const EdgeInsets.all(8.0),
+            child: const Text("2000"),
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           NeumoRadio(
             groupValue: groupValue,
             value: 2012,
@@ -134,14 +134,15 @@ NeumoRadio(
                 groupValue = value;
               });
             },
-            padding: EdgeInsets.all(8.0),
-            child: Text("2012"),
+            padding: const EdgeInsets.all(8.0),
+            child: const Text("2012"),
           ),
         ],
       ),
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -154,6 +155,8 @@ NeumoRadio(
 }
 
 class CircleRadios extends StatefulWidget {
+  const CircleRadios({super.key});
+
   @override
   createState() => _CircleRadiosState();
 }
@@ -162,7 +165,7 @@ class _CircleRadiosState extends State<CircleRadios> {
   String groupValue;
 
   Widget _buildCode(BuildContext context) {
-    return Code("""
+    return const Code("""
 String groupValue;
 
 NeumoRadio(
@@ -181,16 +184,16 @@ NeumoRadio(
 
   Widget _buildWidget(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       child: Row(
         children: <Widget>[
           Text(
             "Circle",
             style: TextStyle(color: NeumoTheme.defaultTextColor(context)),
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           NeumoRadio(
-            style: NeumoRadioStyle(
+            style: const NeumoRadioStyle(
               boxShape: NeumoBoxShape.circle(),
             ),
             groupValue: groupValue,
@@ -200,13 +203,13 @@ NeumoRadio(
                 groupValue = value;
               });
             },
-            padding: EdgeInsets.all(18.0),
-            child: Text("A"),
+            padding: const EdgeInsets.all(18.0),
+            child: const Text("A"),
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           NeumoRadio(
             value: "B",
-            style: NeumoRadioStyle(
+            style: const NeumoRadioStyle(
               boxShape: NeumoBoxShape.circle(),
             ),
             groupValue: groupValue,
@@ -215,12 +218,12 @@ NeumoRadio(
                 groupValue = value;
               });
             },
-            padding: EdgeInsets.all(18.0),
-            child: Text("B"),
+            padding: const EdgeInsets.all(18.0),
+            child: const Text("B"),
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           NeumoRadio(
-            style: NeumoRadioStyle(
+            style: const NeumoRadioStyle(
               boxShape: NeumoBoxShape.circle(),
             ),
             groupValue: groupValue,
@@ -230,14 +233,15 @@ NeumoRadio(
                 groupValue = value;
               });
             },
-            padding: EdgeInsets.all(18.0),
-            child: Text("C"),
+            padding: const EdgeInsets.all(18.0),
+            child: const Text("C"),
           ),
         ],
       ),
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -259,37 +263,37 @@ class _EnabledDisabledWidgetState extends State<_EnabledDisabledWidget> {
 
   Widget _buildWidget(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       child: Row(
         children: <Widget>[
           Text(
             "Enabled :",
             style: TextStyle(color: NeumoTheme.defaultTextColor(context)),
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           NeumoRadio(
             groupValue: groupValue,
             value: 1,
-            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 18),
-            child: Text("First"),
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 18),
+            child: const Text("First"),
             onChanged: (value) {
               setState(() {
                 groupValue = value;
               });
             },
           ),
-          SizedBox(width: 24),
+          const SizedBox(width: 24),
           Text(
             "Disabled :",
             style: TextStyle(color: NeumoTheme.defaultTextColor(context)),
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           NeumoRadio(
             isEnabled: false,
             groupValue: groupValue,
             value: 2,
-            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 18),
-            child: Text("Second"),
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 18),
+            child: const Text("Second"),
             onChanged: (value) {
               setState(() {
                 groupValue = value;
@@ -302,7 +306,7 @@ class _EnabledDisabledWidgetState extends State<_EnabledDisabledWidget> {
   }
 
   Widget _buildCode(BuildContext context) {
-    return Code("""
+    return const Code("""
 int groupValue;
 
 NeumoRadio(
@@ -319,6 +323,7 @@ NeumoRadio(
 """);
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,

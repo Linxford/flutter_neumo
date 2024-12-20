@@ -1,6 +1,8 @@
 import 'package:flutter_neumo/flutter_neumo.dart';
 
 class AudioPlayerSample extends StatefulWidget {
+  const AudioPlayerSample({super.key});
+
   @override
   _AudioPlayerSampleState createState() => _AudioPlayerSampleState();
 }
@@ -10,7 +12,7 @@ class _AudioPlayerSampleState extends State<AudioPlayerSample> {
   Widget build(BuildContext context) {
     return NeumoTheme(
         themeMode: ThemeMode.light,
-        theme: NeumoThemeData(
+        theme: const NeumoThemeData(
           defaultTextColor: Color(0xFF3E3E3E),
           baseColor: Color(0xFFDDE6E8),
           intensity: 0.5,
@@ -38,15 +40,15 @@ class __PageState extends State<_Page> {
         child: NeumoBackground(
           child: Column(
             children: <Widget>[
-              SizedBox(height: 14),
+              const SizedBox(height: 14),
               _buildTopBar(context),
-              SizedBox(height: 80),
+              const SizedBox(height: 80),
               _buildImage(context),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               _buildTitle(context),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               _buildSeekBar(context),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               _buildControlsBar(context),
             ],
           ),
@@ -68,7 +70,7 @@ class __PageState extends State<_Page> {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              style: NeumoStyle(
+              style: const NeumoStyle(
                 shape: NeumoShape.flat,
                 boxShape: NeumoBoxShape.circle(),
               ),
@@ -96,7 +98,7 @@ class __PageState extends State<_Page> {
                       _useDark ? ThemeMode.dark : ThemeMode.light;
                 });
               },
-              style: NeumoStyle(
+              style: const NeumoStyle(
                 shape: NeumoShape.flat,
                 boxShape: NeumoBoxShape.circle(),
               ),
@@ -113,10 +115,10 @@ class __PageState extends State<_Page> {
 
   Widget _buildImage(BuildContext context) {
     return Neumo(
-      style: NeumoStyle(
+      style: const NeumoStyle(
         boxShape: NeumoBoxShape.circle(),
       ),
-      child: Container(
+      child: SizedBox(
           height: 200,
           width: 200,
           child: Image.asset(
@@ -171,7 +173,7 @@ class __PageState extends State<_Page> {
                   )),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 8,
           ),
           NeumoSlider(
@@ -193,7 +195,7 @@ class __PageState extends State<_Page> {
         NeumoButton(
           padding: const EdgeInsets.all(18.0),
           onPressed: () {},
-          style: NeumoStyle(
+          style: const NeumoStyle(
             shape: NeumoShape.flat,
             boxShape: NeumoBoxShape.circle(),
           ),
@@ -206,7 +208,7 @@ class __PageState extends State<_Page> {
         NeumoButton(
           padding: const EdgeInsets.all(24.0),
           onPressed: () {},
-          style: NeumoStyle(
+          style: const NeumoStyle(
             shape: NeumoShape.flat,
             boxShape: NeumoBoxShape.circle(),
           ),
@@ -220,7 +222,7 @@ class __PageState extends State<_Page> {
         NeumoButton(
           padding: const EdgeInsets.all(18.0),
           onPressed: () {},
-          style: NeumoStyle(
+          style: const NeumoStyle(
             shape: NeumoShape.flat,
             boxShape: NeumoBoxShape.circle(),
           ),

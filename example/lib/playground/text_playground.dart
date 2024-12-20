@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumo/flutter_neumo.dart';
 
 class NeumoTextPlayground extends StatefulWidget {
+  const NeumoTextPlayground({super.key});
+
   @override
   _NeumoPlaygroundState createState() => _NeumoPlaygroundState();
 }
@@ -12,7 +14,7 @@ class _NeumoPlaygroundState extends State<NeumoTextPlayground> {
   Widget build(BuildContext context) {
     return NeumoTheme(
       themeMode: ThemeMode.light,
-      theme: NeumoThemeData(
+      theme: const NeumoThemeData(
         baseColor: Color(0xffDDDDDD),
         lightSource: LightSource.topLeft,
         depth: 6,
@@ -49,28 +51,28 @@ class __PageState extends State<_Page> {
     if (displayIcon) {
       return NeumoIcon(
         Icons.public,
-        size: this.fontSize,
+        size: fontSize,
         style: NeumoStyle(
-          shape: this.shape,
-          intensity: this.intensity,
-          surfaceIntensity: this.surfaceIntensity,
+          shape: shape,
+          intensity: intensity,
+          surfaceIntensity: surfaceIntensity,
           depth: depth,
-          lightSource: this.lightSource,
+          lightSource: lightSource,
         ),
       );
     } else {
       return NeumoText(
-        this._textController.text,
+        _textController.text,
         textStyle: NeumoTextStyle(
-          fontSize: this.fontSize,
+          fontSize: fontSize,
           fontWeight: _fontWeight(),
         ),
         style: NeumoStyle(
-          shape: this.shape,
-          intensity: this.intensity,
-          surfaceIntensity: this.surfaceIntensity,
+          shape: shape,
+          intensity: intensity,
+          surfaceIntensity: surfaceIntensity,
           depth: depth,
-          lightSource: this.lightSource,
+          lightSource: lightSource,
         ),
       );
     }
@@ -93,7 +95,7 @@ class __PageState extends State<_Page> {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12)),
                     color: Theme.of(context).colorScheme.secondary,
-                    child: Text(
+                    child: const Text(
                       "back",
                       style: TextStyle(color: Colors.white),
                     ),
@@ -126,13 +128,13 @@ class __PageState extends State<_Page> {
 
   Widget _configurators() {
     final Color buttonActiveColor = Theme.of(context).colorScheme.secondary;
-    final Color buttonInnactiveColor = Colors.white;
+    const Color buttonInnactiveColor = Colors.white;
 
-    final Color textActiveColor = Colors.white;
+    const Color textActiveColor = Colors.white;
     final Color textInactiveColor = Colors.black.withOpacity(0.3);
 
     return Card(
-      margin: EdgeInsets.all(8),
+      margin: const EdgeInsets.all(8),
       elevation: 12,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       color: Colors.grey[300],
@@ -239,9 +241,9 @@ class __PageState extends State<_Page> {
 
   Widget shapeWidget() {
     final Color buttonActiveColor = Theme.of(context).colorScheme.secondary;
-    final Color buttonInnactiveColor = Colors.white;
+    const Color buttonInnactiveColor = Colors.white;
 
-    final Color iconActiveColor = Colors.white;
+    const Color iconActiveColor = Colors.white;
     final Color iconInactiveColor = Colors.black.withOpacity(0.3);
 
     return Row(
@@ -317,11 +319,11 @@ class __PageState extends State<_Page> {
   Widget colorPicker() {
     return Row(
       children: <Widget>[
-        SizedBox(
+        const SizedBox(
           width: 12,
         ),
-        Text("Color "),
-        SizedBox(
+        const Text("Color "),
+        const SizedBox(
           width: 4,
         ),
         ColorSelector(
@@ -340,7 +342,7 @@ class __PageState extends State<_Page> {
   Widget depthSelector() {
     return Row(
       children: <Widget>[
-        Padding(
+        const Padding(
           padding: EdgeInsets.only(left: 12),
           child: Text("Depth"),
         ),
@@ -357,7 +359,7 @@ class __PageState extends State<_Page> {
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(right: 12),
+          padding: const EdgeInsets.only(right: 12),
           child: Text(depth.floor().toString()),
         ),
       ],
@@ -367,7 +369,7 @@ class __PageState extends State<_Page> {
   Widget fontSizeSelector() {
     return Row(
       children: <Widget>[
-        Padding(
+        const Padding(
           padding: EdgeInsets.only(left: 12),
           child: Text("FontSize"),
         ),
@@ -384,7 +386,7 @@ class __PageState extends State<_Page> {
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(right: 12),
+          padding: const EdgeInsets.only(right: 12),
           child: Text(fontSize.floor().toString()),
         ),
       ],
@@ -394,17 +396,17 @@ class __PageState extends State<_Page> {
   Widget textSelector() {
     return Row(
       children: <Widget>[
-        Padding(
+        const Padding(
           padding: EdgeInsets.only(left: 12),
           child: Text("Text"),
         ),
-        SizedBox(
+        const SizedBox(
           width: 12,
         ),
         Expanded(
           child: TextField(
-            controller: this._textController,
-            decoration: InputDecoration(
+            controller: _textController,
+            decoration: const InputDecoration(
               border: OutlineInputBorder(),
             ),
             onChanged: (s) {
@@ -419,7 +421,7 @@ class __PageState extends State<_Page> {
   Widget intensitySelector() {
     return Row(
       children: <Widget>[
-        Padding(
+        const Padding(
           padding: EdgeInsets.only(left: 12),
           child: Text("Intensity"),
         ),
@@ -436,7 +438,7 @@ class __PageState extends State<_Page> {
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(right: 12),
+          padding: const EdgeInsets.only(right: 12),
           child: Text(((intensity * 100).floor() / 100).toString()),
         ),
       ],
@@ -444,7 +446,7 @@ class __PageState extends State<_Page> {
   }
 
   FontWeight _fontWeight() {
-    switch (this.fontWeight ~/ 100) {
+    switch (fontWeight ~/ 100) {
       case 1:
         return FontWeight.w100;
       case 2:
@@ -470,7 +472,7 @@ class __PageState extends State<_Page> {
   Widget fontWeightSelector() {
     return Row(
       children: <Widget>[
-        Padding(
+        const Padding(
           padding: EdgeInsets.only(left: 12),
           child: Text("FontWeight"),
         ),
@@ -487,7 +489,7 @@ class __PageState extends State<_Page> {
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(right: 12),
+          padding: const EdgeInsets.only(right: 12),
           child: Text(((fontWeight * 100).floor() / 100).toString()),
         ),
       ],
@@ -497,7 +499,7 @@ class __PageState extends State<_Page> {
   Widget surfaceIntensitySelector() {
     return Row(
       children: <Widget>[
-        Padding(
+        const Padding(
           padding: EdgeInsets.only(left: 12),
           child: Text("SurfaceIntensity"),
         ),
@@ -514,7 +516,7 @@ class __PageState extends State<_Page> {
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(right: 12),
+          padding: const EdgeInsets.only(right: 12),
           child: Text(((surfaceIntensity * 100).floor() / 100).toString()),
         ),
       ],

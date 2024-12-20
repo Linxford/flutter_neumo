@@ -17,10 +17,12 @@ import 'slider/widget_slider.dart';
 import 'switch/widget_switch.dart';
 
 class WidgetsHome extends StatelessWidget {
+  const WidgetsHome({super.key});
+
   Widget _buildButton({String text, VoidCallback onClick}) {
     return NeumoButton(
-      margin: EdgeInsets.only(bottom: 12),
-      padding: EdgeInsets.symmetric(
+      margin: const EdgeInsets.only(bottom: 12),
+      padding: const EdgeInsets.symmetric(
         vertical: 18,
         horizontal: 24,
       ),
@@ -30,21 +32,21 @@ class WidgetsHome extends StatelessWidget {
         ),
         shape: NeumoShape.flat,
       ),
-      child: Center(child: Text(text)),
       onPressed: onClick,
+      child: Center(child: Text(text)),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return NeumoTheme(
+    return const NeumoTheme(
       theme: NeumoThemeData(depth: 8),
       child: Scaffold(
         backgroundColor: NeumoColors.background,
         body: SafeArea(
           child: SingleChildScrollView(
             child: Padding(
-              padding: const EdgeInsets.all(18.0),
+              padding: EdgeInsets.all(18.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisAlignment: MainAxisAlignment.start,
