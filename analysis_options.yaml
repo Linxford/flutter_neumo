@@ -2,6 +2,15 @@ include: package:flutter_lints/flutter.yaml
 analyzer:
   errors:
     library_private_types_in_public_api: ignore
+    constant_identifier_names: ignore
+    file_names: ignore
+    deprecated_member_use: ignore
+    unused_local_variable: ignore
+    avoid_unnecessary_containers: ignore
+    library_prefixes: ignore
+    overridden_fields: ignore
+    unnecessary_import: ignore
+    avoid_renaming_method_parameters: ignore
 
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options

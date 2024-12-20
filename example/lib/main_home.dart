@@ -63,7 +63,7 @@ class _NeumoAppBarState extends State<NeumoAppBar> {
           style: widget.buttonStyle,
           onPressed: _openDrawer,
           tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
-          child: Icon(Icons.menu),
+          child: const Icon(Icons.menu),
         );
       } else if (canPop) {
         leading = useCloseButton
@@ -118,7 +118,7 @@ class _NeumoAppBarState extends State<NeumoAppBar> {
           style: widget.buttonStyle,
           onPressed: _openEndDrawer,
           tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
-          child: Icon(Icons.menu),
+          child: const Icon(Icons.menu),
         ),
       );
     }

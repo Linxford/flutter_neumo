@@ -109,7 +109,7 @@ class SamplesHome extends StatelessWidget {
                       onClick: () {
                         Navigator.of(context)
                             .push(MaterialPageRoute(builder: (context) {
-                          return WidgetsSample();
+                          return const WidgetsSample();
                         }));
                       }),
                 ],

@@ -19,7 +19,7 @@ class NeumoThemeInherited extends InheritedWidget {
       : super(child: child);
 
   @override
-  bool updateShouldNotify(NeumoThemeInherited old) => value != old.value;
+  bool updateShouldNotify(NeumoThemeInherited other) => value != other.value;
 
   NeumoThemeData? get current {
     return value.current;

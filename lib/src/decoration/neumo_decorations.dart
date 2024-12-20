@@ -65,7 +65,7 @@ class NeumoDecoration extends Decoration {
   }
 
   NeumoDecoration scale(double factor) {
-    print("scale");
+    debugPrint("scale");
     return NeumoDecoration(
         isForeground: isForeground,
         renderingByPath: renderingByPath,

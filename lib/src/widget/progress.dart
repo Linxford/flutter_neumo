@@ -276,7 +276,9 @@ class _NeumoProgressIndeterminateState extends State<NeumoProgressIndeterminate>
       await _controller
           .repeat(min: 0, max: 1, reverse: widget.reverse)
           .orCancel;
-    } on TickerCanceled {}
+    } on TickerCanceled {
+      _loop();
+    }
   }
 
   @override

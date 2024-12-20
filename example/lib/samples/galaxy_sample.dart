@@ -105,7 +105,7 @@ class _PageState extends State<_Page> {
             right: 0,
             child: Container(
               margin: const EdgeInsets.only(left: 12, right: 12, top: 10),
-              child: TopBar(
+              child: const TopBar(
                 actions: <Widget>[
                   ThemeConfigurator(),
                 ],

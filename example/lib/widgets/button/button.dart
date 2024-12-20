@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_neumo/flutter_neumo.dart';
 
 class ButtonSample extends StatefulWidget {
@@ -72,7 +71,7 @@ class __PageState extends State<_Page> {
     return Center(
       child: NeumoButton(
         onPressed: () {
-          print("click");
+          debugPrint("click");
         },
         style: const NeumoStyle(
           shape: NeumoShape.flat,

@@ -51,7 +51,7 @@ class NeumoThemeData {
   final Color borderColor;
   final double borderWidth;
 
-  final Color defaultTextColor; //TODO maybe use TextStyle here
+  final Color defaultTextColor;
   final double _depth;
   final double _intensity;
   final LightSource lightSource;

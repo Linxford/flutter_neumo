@@ -37,7 +37,7 @@ class _PageState extends State<_Page> {
     return NeumoBackground(
       padding: const EdgeInsets.all(8),
       child: Scaffold(
-        appBar: TopBar(
+        appBar: const TopBar(
           title: "Toggle",
           actions: <Widget>[
             ThemeConfigurator(),
@@ -170,7 +170,7 @@ Expanded(
               onChanged: (value) {
                 setState(() {
                   _selectedIndex = value;
-                  print("_firstSelected: $_selectedIndex");
+                  debugPrint("_firstSelected: $_selectedIndex");
                 });
               },
             ),
@@ -274,13 +274,13 @@ NeumoToggle(
               if (value == 0) {
                 ScaffoldMessenger.of(context)
                     .showSnackBar(const SnackBar(content: Text('on back !')));
-                print("onAnimationChangedFinished: $_selectedIndex");
+                debugPrint("onAnimationChangedFinished: $_selectedIndex");
               }
             },
             onChanged: (value) {
               setState(() {
                 _selectedIndex = value;
-                print("_firstSelected: $_selectedIndex");
+                debugPrint("_firstSelected: $_selectedIndex");
               });
             },
           ),

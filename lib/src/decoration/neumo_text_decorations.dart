@@ -71,7 +71,7 @@ class NeumoTextDecoration extends Decoration {
   }
 
   NeumoTextDecoration scale(double factor) {
-    print("scale");
+    debugPrint("scale");
     return NeumoTextDecoration(
         textAlign: textAlign,
         isForeground: isForeground,

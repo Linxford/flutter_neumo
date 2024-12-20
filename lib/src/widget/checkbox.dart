@@ -120,7 +120,7 @@ class NeumoCheckbox extends StatelessWidget {
   final bool value;
   final NeumoCheckboxStyle style;
   final NeumoCheckboxListener onChanged;
-  final isEnabled;
+  final bool isEnabled;
   final EdgeInsets padding;
   final EdgeInsets margin;
   final Duration duration;

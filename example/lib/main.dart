@@ -46,7 +46,7 @@ class MyHomePage extends StatelessWidget {
           children: <Widget>[
             NeumoButton(
               onPressed: () {
-                print("onClick");
+                debugPrint("onClick");
               },
               style: const NeumoStyle(
                 shape: NeumoShape.flat,
