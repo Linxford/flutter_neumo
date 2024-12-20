@@ -104,7 +104,8 @@ class NeumoTextDecoration extends Decoration {
         isForeground: a.isForeground,
         text: a.text,
         textAlign: a.textAlign,
-        textStyle: TextStyle.lerp(a.textStyle, b.textStyle, t) ?? const TextStyle(),
+        textStyle:
+            TextStyle.lerp(a.textStyle, b.textStyle, t) ?? const TextStyle(),
         renderingByPath: a.renderingByPath,
         style: a.style.copyWith(
           border: NeumoBorder.lerp(aStyle.border, bStyle.border, t),

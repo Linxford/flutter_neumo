@@ -200,7 +200,8 @@ class __PageContentState extends State<_PageContent> {
               RaisedButton(
                 onPressed: () {
                   setState(() {
-                    NeumoTheme.of(context).updateCurrentTheme(const NeumoThemeData(
+                    NeumoTheme.of(context)
+                        .updateCurrentTheme(const NeumoThemeData(
                       depth: 1,
                       intensity: 0.5,
                       accentColor: Colors.cyan,
@@ -214,7 +215,8 @@ class __PageContentState extends State<_PageContent> {
               RaisedButton(
                 onPressed: () {
                   setState(() {
-                    NeumoTheme.of(context).updateCurrentTheme(const NeumoThemeData(
+                    NeumoTheme.of(context)
+                        .updateCurrentTheme(const NeumoThemeData(
                       depth: 8,
                       intensity: 0.3,
                       accentColor: Colors.greenAccent,

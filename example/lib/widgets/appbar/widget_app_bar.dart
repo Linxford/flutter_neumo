@@ -165,17 +165,20 @@ class _MyDrawer extends StatelessWidget {
         child: Column(
           children: [
             ConstrainedBox(
-              constraints:
-                  const BoxConstraints.tightFor(height: NeumoAppBar.toolbarHeight),
+              constraints: const BoxConstraints.tightFor(
+                  height: NeumoAppBar.toolbarHeight),
               child: NeumoAppBar(
                 title: const Text('Menu'),
-                leading: isLead ? const NeumoBackButton() : const NeumoCloseButton(),
+                leading:
+                    isLead ? const NeumoBackButton() : const NeumoCloseButton(),
                 actions: <Widget>[
                   NeumoButton(
                     child: const Icon(Icons.style),
                     onPressed: () {},
                   ),
-                  isLead ? const NeumoCloseButton() : const NeumoBackButton(forward: true),
+                  isLead
+                      ? const NeumoCloseButton()
+                      : const NeumoBackButton(forward: true),
                 ],
               ),
             ),

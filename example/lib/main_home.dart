@@ -36,7 +36,7 @@ class NeumoAppBar extends StatefulWidget implements PreferredSizeWidget {
     this.buttonPadding,
     this.titleTextStyle,
     this.padding = 16.0,
-  })  : preferredSize = const Size.fromHeight(toolbarHeight);
+  }) : preferredSize = const Size.fromHeight(toolbarHeight);
 
   @override
   State<NeumoAppBar> createState() => _NeumoAppBarState();
