@@ -4,7 +4,7 @@ import 'package:example/lib/top_bar.dart';
 import 'package:flutter_neumo/flutter_neumo.dart';
 
 class TipsRecursiveeEmbossPage extends StatefulWidget {
-  const TipsRecursiveeEmbossPage({Key key}) : super(key: key);
+  const TipsRecursiveeEmbossPage({super.key});
 
   @override
   createState() => _WidgetPageState();
@@ -37,7 +37,7 @@ class _PageState extends State<_Page> {
     return NeumoBackground(
       padding: const EdgeInsets.all(8),
       child: Scaffold(
-        appBar: TopBar(
+        appBar: const TopBar(
           title: "Emboss Recursive",
           actions: <Widget>[
             ThemeConfigurator(),
@@ -87,14 +87,14 @@ class _EmbossmbossWidgetState extends State<_EmbossmbossWidget> {
   }
 
   Widget _generateEmbosss(
-      {int number, Widget child, bool reverseEachPair = false}) {
+      {required int number, required Widget child, bool reverseEachPair = false}) {
     Widget element = child;
     for (int i = 0; i < number; ++i) {
       element = Neumo(
         padding: const EdgeInsets.all(20),
         style: NeumoStyle(
           boxShape: const NeumoBoxShape.circle(),
-          depth: -(NeumoTheme.depth(context).abs()), //force negative
+          depth: -(NeumoTheme.depth(context)?.abs() ?? 0), //force negative
           oppositeShadowLightSource: (reverseEachPair && i % 2 == 0),
         ),
         child: element,

@@ -94,7 +94,7 @@ class __PageState extends State<_Page> {
               onPressed: () {
                 setState(() {
                   _useDark = !_useDark;
-                  NeumoTheme.of(context).themeMode =
+                  NeumoTheme.of(context)?.themeMode =
                       _useDark ? ThemeMode.dark : ThemeMode.light;
                 });
               },
@@ -237,10 +237,10 @@ class __PageState extends State<_Page> {
 
   Color _iconsColor() {
     final theme = NeumoTheme.of(context);
-    if (theme.isUsingDark) {
-      return theme.current.accentColor;
+    if (theme?.isUsingDark ?? false) {
+      return theme?.current?.accentColor ?? Colors.white;
     } else {
-      return null;
+      return theme?.current?.accentColor ?? Colors.black;
     }
   }
 }

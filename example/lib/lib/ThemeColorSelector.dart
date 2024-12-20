@@ -21,8 +21,11 @@ class _ThemeColorSelectorState extends State<ThemeColorSelector> {
         color: NeumoTheme.baseColor(widget.customContext ?? context),
         onColorChanged: (color) {
           setState(() {
-            NeumoTheme.update(widget.customContext ?? context,
-                (current) => current?.copyWith(baseColor: color));
+            NeumoTheme.update(
+                widget.customContext ?? context,
+                (current) =>
+                    current?.copyWith(baseColor: color) ??
+                    const NeumoThemeData());
           });
         },
       ),

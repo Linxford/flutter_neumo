@@ -4,7 +4,7 @@ import 'package:example/lib/top_bar.dart';
 import 'package:flutter_neumo/flutter_neumo.dart';
 
 class RadioButtonWidgetPage extends StatefulWidget {
-  const RadioButtonWidgetPage({Key key}) : super(key: key);
+  const RadioButtonWidgetPage({super.key});
 
   @override
   createState() => _WidgetPageState();
@@ -37,7 +37,7 @@ class _PageState extends State<_Page> {
     return NeumoBackground(
       padding: const EdgeInsets.all(8),
       child: Scaffold(
-        appBar: TopBar(
+        appBar: const TopBar(
           title: "Radios",
           actions: <Widget>[
             ThemeConfigurator(),
@@ -51,7 +51,7 @@ class _PageState extends State<_Page> {
             mainAxisSize: MainAxisSize.max,
             children: [
               _DefaultWidget(),
-              CircleRadios(),
+              const CircleRadios(),
               _EnabledDisabledWidget(),
               const SizedBox(height: 30),
             ],
@@ -68,7 +68,7 @@ class _DefaultWidget extends StatefulWidget {
 }
 
 class _DefaultWidgetState extends State<_DefaultWidget> {
-  int groupValue;
+  int? groupValue;
 
   Widget _buildCode(BuildContext context) {
     return const Code("""
@@ -162,7 +162,7 @@ class CircleRadios extends StatefulWidget {
 }
 
 class _CircleRadiosState extends State<CircleRadios> {
-  String groupValue;
+  String? groupValue;
 
   Widget _buildCode(BuildContext context) {
     return const Code("""
@@ -259,7 +259,7 @@ class _EnabledDisabledWidget extends StatefulWidget {
 }
 
 class _EnabledDisabledWidgetState extends State<_EnabledDisabledWidget> {
-  int groupValue;
+  int? groupValue;
 
   Widget _buildWidget(BuildContext context) {
     return Padding(

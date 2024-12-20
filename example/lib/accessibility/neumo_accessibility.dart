@@ -9,7 +9,7 @@ class NeumoAccessibility extends StatefulWidget {
 
 class _NeumoAccessibilityState extends State<NeumoAccessibility> {
   late ThemeData theme;
-  LightSource lightSource = LightSource.topLeft;
+  LightSource lightSource = LightSource(0.5, 0.5);
   ShapeType shape = ShapeType.flat;
   double depth = 5;
   double intensity = 0.8;

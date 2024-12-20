@@ -50,7 +50,7 @@ class ThemeConfigurator extends StatelessWidget {
 class _ThemeConfiguratorDialog extends StatefulWidget {
   final BuildContext contextContainingTheme;
 
-  const _ThemeConfiguratorDialog({this.contextContainingTheme});
+  const _ThemeConfiguratorDialog({required this.contextContainingTheme});
 
   @override
   _ThemeConfiguratorState createState() => _ThemeConfiguratorState();
@@ -82,14 +82,15 @@ class _ThemeConfiguratorState extends State<_ThemeConfiguratorDialog> {
           child: Slider(
             min: Neumo.MIN_INTENSITY, //in case of != 0
             max: Neumo.MAX_INTENSITY,
-            value: intensity,
+            value: intensity ?? 0.5,
             onChanged: (value) {
               setState(() {
                 NeumoTheme.update(
                   widget.contextContainingTheme,
-                  (current) => current.copyWith(
+                  (current) => current?.copyWith(
                     intensity: value,
-                  ),
+                  ) ??
+                      const NeumoThemeData(),
                 );
               });
             },
@@ -99,7 +100,7 @@ class _ThemeConfiguratorState extends State<_ThemeConfiguratorDialog> {
           padding: const EdgeInsets.only(right: 12),
           child: SizedBox(
             width: 40,
-            child: Text(((intensity * 100).floor() / 100).toString()),
+            child: Text((((intensity ?? 0.5) * 100).floor() / 100).toString()),
           ),
         ),
       ],
@@ -119,12 +120,13 @@ class _ThemeConfiguratorState extends State<_ThemeConfiguratorDialog> {
           child: Slider(
             min: Neumo.MIN_DEPTH,
             max: Neumo.MAX_DEPTH,
-            value: depth,
+            value: depth ?? 5,
             onChanged: (value) {
               setState(() {
                 NeumoTheme.update(
                   widget.contextContainingTheme,
-                  (current) => current.copyWith(depth: value),
+                  (current) => current?.copyWith(depth: value) ??
+                      const NeumoThemeData(),
                 );
               });
             },
@@ -134,7 +136,7 @@ class _ThemeConfiguratorState extends State<_ThemeConfiguratorDialog> {
           padding: const EdgeInsets.only(right: 12),
           child: SizedBox(
             width: 40,
-            child: Text(depth.floor().toString()),
+            child: Text((depth ?? 5).floor().toString()),
           ),
         ),
       ],

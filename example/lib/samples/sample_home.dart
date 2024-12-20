@@ -13,7 +13,7 @@ import 'widgets_sample.dart';
 class SamplesHome extends StatelessWidget {
   const SamplesHome({super.key});
 
-  Widget _buildButton({String text, VoidCallback onClick}) {
+  Widget _buildButton({required String text, required VoidCallback onClick}) {
     return NeumoButton(
       margin: const EdgeInsets.only(bottom: 12),
       padding: const EdgeInsets.symmetric(
@@ -33,27 +33,27 @@ class SamplesHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const NeumoTheme(
-      theme: NeumoThemeData(depth: 8),
-      darkTheme: NeumoThemeData(depth: 8),
+    return NeumoTheme(
+      theme: const NeumoThemeData(depth: 8),
+      darkTheme: const NeumoThemeData(depth: 8),
       child: Scaffold(
         backgroundColor: NeumoColors.background,
         body: SafeArea(
           child: SingleChildScrollView(
             child: Padding(
-              padding: EdgeInsets.all(18.0),
+              padding: const EdgeInsets.all(18.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisAlignment: MainAxisAlignment.start,
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  TopBar(),
+                  const TopBar(),
                   _buildButton(
                       text: "Tesla",
                       onClick: () {
                         Navigator.of(context)
                             .push(MaterialPageRoute(builder: (context) {
-                          return TeslaSample();
+                          return const TeslaSample();
                         }));
                       }),
                   _buildButton(
@@ -61,7 +61,7 @@ class SamplesHome extends StatelessWidget {
                       onClick: () {
                         Navigator.of(context)
                             .push(MaterialPageRoute(builder: (context) {
-                          return AudioPlayerSample();
+                          return const AudioPlayerSample();
                         }));
                       }),
                   _buildButton(
@@ -69,7 +69,7 @@ class SamplesHome extends StatelessWidget {
                       onClick: () {
                         Navigator.of(context)
                             .push(MaterialPageRoute(builder: (context) {
-                          return ClockSample();
+                          return const ClockSample();
                         }));
                       }),
                   _buildButton(
@@ -77,7 +77,7 @@ class SamplesHome extends StatelessWidget {
                       onClick: () {
                         Navigator.of(context)
                             .push(MaterialPageRoute(builder: (context) {
-                          return GalaxySample();
+                          return const GalaxySample();
                         }));
                       }),
                   _buildButton(
@@ -85,7 +85,7 @@ class SamplesHome extends StatelessWidget {
                       onClick: () {
                         Navigator.of(context)
                             .push(MaterialPageRoute(builder: (context) {
-                          return CalculatorSample();
+                          return const CalculatorSample();
                         }));
                       }),
                   _buildButton(
@@ -93,7 +93,7 @@ class SamplesHome extends StatelessWidget {
                       onClick: () {
                         Navigator.of(context)
                             .push(MaterialPageRoute(builder: (context) {
-                          return FormSample();
+                          return const FormSample();
                         }));
                       }),
                   _buildButton(
@@ -101,7 +101,7 @@ class SamplesHome extends StatelessWidget {
                       onClick: () {
                         Navigator.of(context)
                             .push(MaterialPageRoute(builder: (context) {
-                          return CreditCardSample();
+                          return const CreditCardSample();
                         }));
                       }),
                   _buildButton(
@@ -109,7 +109,7 @@ class SamplesHome extends StatelessWidget {
                       onClick: () {
                         Navigator.of(context)
                             .push(MaterialPageRoute(builder: (context) {
-                          return WidgetsSample();
+                          return  WidgetsSample();
                         }));
                       }),
                 ],

@@ -7,7 +7,7 @@ import 'border/tips_emboss_inside_emboss.dart';
 class TipsHome extends StatelessWidget {
   const TipsHome({super.key});
 
-  Widget _buildButton({String text, VoidCallback onClick}) {
+  Widget _buildButton({required String text, required VoidCallback onClick}) {
     return NeumoButton(
       margin: const EdgeInsets.only(bottom: 12),
       padding: const EdgeInsets.symmetric(
@@ -27,26 +27,26 @@ class TipsHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const NeumoTheme(
-      theme: NeumoThemeData(depth: 8),
+    return NeumoTheme(
+      theme: const NeumoThemeData(depth: 8),
       child: Scaffold(
         backgroundColor: NeumoColors.background,
         body: SafeArea(
           child: SingleChildScrollView(
             child: Padding(
-              padding: EdgeInsets.all(18.0),
+              padding: const EdgeInsets.all(18.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisAlignment: MainAxisAlignment.start,
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  TopBar(title: "Tips"),
+                  const TopBar(title: "Tips"),
                   _buildButton(
                       text: "Border",
                       onClick: () {
                         Navigator.of(context)
                             .push(MaterialPageRoute(builder: (context) {
-                          return TipsBorderPage();
+                          return  TipsBorderPage();
                         }));
                       }),
                   _buildButton(
@@ -54,7 +54,7 @@ class TipsHome extends StatelessWidget {
                       onClick: () {
                         Navigator.of(context)
                             .push(MaterialPageRoute(builder: (context) {
-                          return TipsRecursiveeEmbossPage();
+                          return const TipsRecursiveeEmbossPage();
                         }));
                       }),
                 ],

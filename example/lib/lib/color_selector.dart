@@ -50,7 +50,7 @@ class ColorSelector extends StatelessWidget {
               ),
             ),
             actions: <Widget>[
-              FlatButton(
+              ElevatedButton(
                 child: const Text('Close'),
                 onPressed: () {
                   Navigator.of(context).pop();

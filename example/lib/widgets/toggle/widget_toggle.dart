@@ -4,7 +4,7 @@ import 'package:example/lib/top_bar.dart';
 import 'package:flutter_neumo/flutter_neumo.dart';
 
 class ToggleWidgetPage extends StatefulWidget {
-  const ToggleWidgetPage({Key key}) : super(key: key);
+  const ToggleWidgetPage({super.key});
 
   @override
   createState() => _WidgetPageState();
@@ -272,7 +272,7 @@ NeumoToggle(
             ),
             onAnimationChangedFinished: (value) {
               if (value == 0) {
-                Scaffold.of(context)
+                ScaffoldMessenger.of(context)
                     .showSnackBar(const SnackBar(content: Text('on back !')));
                 print("onAnimationChangedFinished: $_selectedIndex");
               }

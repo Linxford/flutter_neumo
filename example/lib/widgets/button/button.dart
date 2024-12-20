@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_neumo/flutter_neumo.dart';
 
 class ButtonSample extends StatefulWidget {
@@ -43,17 +44,17 @@ class __PageState extends State<_Page> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            RaisedButton(
+            ElevatedButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
               child: const Text("back"),
             ),
-            RaisedButton(
+            ElevatedButton(
               onPressed: () {
                 setState(() {
                   _useDark = !_useDark;
-                  NeumoTheme.of(context).themeMode =
+                  NeumoTheme.of(context)?.themeMode =
                       _useDark ? ThemeMode.dark : ThemeMode.light;
                 });
               },
@@ -90,10 +91,10 @@ class __PageState extends State<_Page> {
 
   Color _iconsColor() {
     final theme = NeumoTheme.of(context);
-    if (theme.isUsingDark) {
-      return theme.current.accentColor;
+    if (theme?.isUsingDark ?? false) {
+      return theme?.current?.accentColor ?? Colors.grey;
     } else {
-      return null;
+      return Colors.black;
     }
   }
 }

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumo/flutter_neumo.dart';
 
 class IconWidgetPage extends StatefulWidget {
-  const IconWidgetPage({Key key}) : super(key: key);
+  const IconWidgetPage({super.key});
 
   @override
   createState() => _WidgetPageState();
@@ -37,7 +37,7 @@ class _PageState extends State<_Page> {
     return NeumoBackground(
       padding: const EdgeInsets.all(8),
       child: Scaffold(
-        appBar: TopBar(
+        appBar: const TopBar(
           title: "Icons",
           actions: <Widget>[
             ThemeConfigurator(),

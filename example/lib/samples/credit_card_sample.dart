@@ -235,7 +235,7 @@ class __PageContentState extends State<_PageContent> {
                 setState(() {
                   _useDark = !_useDark;
 
-                  NeumoTheme.of(context).themeMode =
+                  NeumoTheme.of(context)?.themeMode =
                       _useDark ? ThemeMode.dark : ThemeMode.light;
                 });
               },
@@ -328,7 +328,7 @@ class __PageContentState extends State<_PageContent> {
             value: 0,
             onChanged: (value) {
               setState(() {
-                _dotIndex = value;
+                _dotIndex = value!;
               });
             },
             style: const NeumoRadioStyle(
@@ -348,7 +348,7 @@ class __PageContentState extends State<_PageContent> {
             value: 1,
             onChanged: (value) {
               setState(() {
-                _dotIndex = value;
+                _dotIndex = value!;
               });
             },
             style: const NeumoRadioStyle(
@@ -368,7 +368,7 @@ class __PageContentState extends State<_PageContent> {
             value: 2,
             onChanged: (value) {
               setState(() {
-                _dotIndex = value;
+                _dotIndex = value!;
               });
             },
             style: const NeumoRadioStyle(

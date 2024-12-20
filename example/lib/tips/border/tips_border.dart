@@ -4,7 +4,7 @@ import 'package:example/lib/top_bar.dart';
 import 'package:flutter_neumo/flutter_neumo.dart';
 
 class TipsBorderPage extends StatefulWidget {
-  const TipsBorderPage({Key key}) : super(key: key);
+  const TipsBorderPage({super.key});
 
   @override
   createState() => _WidgetPageState();
@@ -34,8 +34,8 @@ class _Page extends StatefulWidget {
 class _PageState extends State<_Page> {
   @override
   Widget build(BuildContext context) {
-    return NeumoBackground(
-      padding: const EdgeInsets.all(8),
+    return const NeumoBackground(
+      padding: EdgeInsets.all(8),
       child: Scaffold(
         appBar: TopBar(
           title: "Border",
@@ -52,87 +52,87 @@ class _PageState extends State<_Page> {
             children: [
               _CustomWidget(
                 title: "Emboss Inside Flat",
-                firstStyle: const NeumoStyle(
+                firstStyle: NeumoStyle(
                   shape: NeumoShape.flat,
                   depth: 8,
                 ),
-                secondStyle: const NeumoStyle(
+                secondStyle: NeumoStyle(
                   depth: -8,
                 ),
               ),
               _CustomWidget(
                 title: "Emboss Inside Convex",
-                firstStyle: const NeumoStyle(
+                firstStyle: NeumoStyle(
                   shape: NeumoShape.convex,
                   depth: 8,
                 ),
-                secondStyle: const NeumoStyle(
+                secondStyle: NeumoStyle(
                   depth: -8,
                 ),
               ),
               _CustomWidget(
                 title: "Emboss Inside Concave",
-                firstStyle: const NeumoStyle(
+                firstStyle: NeumoStyle(
                   shape: NeumoShape.concave,
                   depth: 8,
                 ),
-                secondStyle: const NeumoStyle(
+                secondStyle: NeumoStyle(
                   depth: -8,
                 ),
               ),
               _CustomWidget(
                 title: "Flat Inside Emboss",
-                firstStyle: const NeumoStyle(
+                firstStyle: NeumoStyle(
                   depth: -8,
                 ),
-                secondStyle: const NeumoStyle(
+                secondStyle: NeumoStyle(
                   depth: 8,
                   shape: NeumoShape.flat,
                 ),
               ),
               _CustomWidget(
                 title: "Convex Inside Emboss",
-                firstStyle: const NeumoStyle(
+                firstStyle: NeumoStyle(
                   depth: -8,
                 ),
-                secondStyle: const NeumoStyle(
+                secondStyle: NeumoStyle(
                   depth: 8,
                   shape: NeumoShape.convex,
                 ),
               ),
               _CustomWidget(
                 title: "Concave Inside Emboss",
-                firstStyle: const NeumoStyle(
+                firstStyle: NeumoStyle(
                   depth: -8,
                 ),
-                secondStyle: const NeumoStyle(
+                secondStyle: NeumoStyle(
                   depth: 8,
                   shape: NeumoShape.concave,
                 ),
               ),
               _CustomWidget(
                 title: "Concave Inside Convex",
-                firstStyle: const NeumoStyle(
+                firstStyle: NeumoStyle(
                   depth: 8,
                   shape: NeumoShape.convex,
                 ),
-                secondStyle: const NeumoStyle(
+                secondStyle: NeumoStyle(
                   depth: 8,
                   shape: NeumoShape.concave,
                 ),
               ),
               _CustomWidget(
                 title: "Convex Inside Concave",
-                firstStyle: const NeumoStyle(
+                firstStyle: NeumoStyle(
                   depth: 8,
                   shape: NeumoShape.concave,
                 ),
-                secondStyle: const NeumoStyle(
+                secondStyle: NeumoStyle(
                   depth: 8,
                   shape: NeumoShape.convex,
                 ),
               ),
-              const SizedBox(height: 30),
+              SizedBox(height: 30),
             ],
           ),
         ),
@@ -148,9 +148,9 @@ class _CustomWidget extends StatefulWidget {
   final NeumoStyle secondStyle;
 
   const _CustomWidget(
-      {@required this.title,
-      @required this.firstStyle,
-      @required this.secondStyle});
+      {required this.title,
+      required this.firstStyle,
+      required this.secondStyle});
 
   @override
   createState() => _CustomWidgetState();

@@ -35,19 +35,19 @@ class _ClockFirstPage extends StatefulWidget {
 class _ClockFirstPageState extends State<_ClockFirstPage> {
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
+    return SafeArea(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Padding(
+          const Padding(
             padding: EdgeInsets.only(left: 8.0, right: 8.0, top: 9.0),
             child: TopBar(),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.0),
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Stack(
               children: <Widget>[
-                Align(
+                const Align(
                   alignment: Alignment.topLeft,
                   child: Text(
                     "Clock",
@@ -58,9 +58,9 @@ class _ClockFirstPageState extends State<_ClockFirstPage> {
                         Shadow(
                             color: Colors.black38,
                             offset: Offset(1.0, 1.0),
-                            blurRadius: 2)
+                            blurRadius: 2),
                       ],
-                      color: NeumoTheme.defaultTextColor(context),
+                      color: Color(0xFF303E57),
                     ),
                   ),
                 ),
@@ -74,18 +74,18 @@ class _ClockFirstPageState extends State<_ClockFirstPage> {
                           NeumoBoxShape.roundRect(BorderRadius.circular(8)),
                     ),
                     child: NeumoButton(
-                      padding: EdgeInsets.all(12.0),
+                      padding: const EdgeInsets.all(12.0),
                       onPressed: () {
                         Navigator.of(context)
                             .push(MaterialPageRoute(builder: (context) {
-                          return ClockAlarmPage();
+                          return const ClockAlarmPage();
                         }));
                       },
                       style: NeumoStyle(
                           depth: -1,
                           boxShape: NeumoBoxShape.roundRect(
                               BorderRadius.circular(8))),
-                      child: Icon(
+                      child: const Icon(
                         Icons.add,
                         color: Color(0xFFC1CDE5),
                       ),
@@ -95,14 +95,14 @@ class _ClockFirstPageState extends State<_ClockFirstPage> {
               ],
             ),
           ),
-          Flexible(child: NeumoClock()),
-          SizedBox(height: 30),
+          const Flexible(child: NeumoClock()),
+          const SizedBox(height: 30),
           Text(
             "6:21 PM",
             style: TextStyle(
               fontWeight: FontWeight.w700,
               fontSize: 36,
-              shadows: [
+              shadows: const [
                 Shadow(
                     color: Colors.black38,
                     offset: Offset(1.0, 1.0),
@@ -119,9 +119,9 @@ class _ClockFirstPageState extends State<_ClockFirstPage> {
               color: NeumoTheme.variantColor(context),
             ),
           ),
-          SizedBox(height: 20),
-          NeumoSelector(),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
+          const NeumoSelector(),
+          const SizedBox(height: 20),
         ],
       ),
     );
@@ -232,11 +232,11 @@ class NeumoClock extends StatelessWidget {
   }
 
   Widget _buildLine(
-      {BuildContext context,
-      double angle,
-      double width,
+      {required BuildContext context,
+      required double angle,
+      required double width,
       double height = 6,
-      Color color}) {
+      required Color color}) {
     return Transform.rotate(
       angle: angle,
       child: Center(

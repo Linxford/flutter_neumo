@@ -1,7 +1,7 @@
 import 'package:flutter_neumo/flutter_neumo.dart';
 
 class AppBarWidgetPage extends StatelessWidget {
-  const AppBarWidgetPage({Key key}) : super(key: key);
+  const AppBarWidgetPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +20,9 @@ class AppBarWidgetPage extends StatelessWidget {
 class _FirstThemeWidgetPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return NeumoTheme(
+    return const NeumoTheme(
       themeMode: ThemeMode.light,
-      theme: const NeumoThemeData(
+      theme: NeumoThemeData(
         lightSource: LightSource.topLeft,
         accentColor: NeumoColors.accent,
         appBarTheme: NeumoAppBarThemeData(
@@ -55,7 +55,7 @@ class _SecondThemeWidgetPage extends StatelessWidget {
         depth: 4,
         intensity: 0.9,
       ),
-      child: AppBarPageUsingTheme(),
+      child: const AppBarPageUsingTheme(),
     );
   }
 }
@@ -78,7 +78,7 @@ class _ThirdThemeWidgetPage extends StatelessWidget {
         depth: 4,
         intensity: 0.9,
       ),
-      child: SizedAppBarPageUsingTheme(),
+      child: const SizedAppBarPageUsingTheme(),
     );
   }
 }
@@ -155,7 +155,7 @@ class FirstThemeContent extends StatelessWidget {
 class _MyDrawer extends StatelessWidget {
   final bool isLead;
 
-  const _MyDrawer({Key key, this.isLead = true}) : super(key: key);
+  const _MyDrawer({super.key, this.isLead = true});
 
   @override
   Widget build(BuildContext context) {
@@ -193,11 +193,11 @@ class _MyDrawer extends StatelessWidget {
 class _CustomIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const SizedBox(
+    return SizedBox(
       height: 300,
       child: NeumoTheme(
         themeMode: ThemeMode.light,
-        theme: NeumoThemeData(
+        theme: const NeumoThemeData(
           lightSource: LightSource.topLeft,
           accentColor: NeumoColors.accent,
           appBarTheme: NeumoAppBarThemeData(
@@ -217,10 +217,10 @@ class _CustomIcon extends StatelessWidget {
           intensity: 0.5,
         ),
         child: Scaffold(
-          appBar: NeumoAppBar(
+          appBar: const NeumoAppBar(
             title: Text("Custom icons + drawer"),
           ),
-          endDrawer: _MyDrawer(isLead: false),
+          endDrawer: const _MyDrawer(isLead: false),
           body: Container(),
         ),
       ),

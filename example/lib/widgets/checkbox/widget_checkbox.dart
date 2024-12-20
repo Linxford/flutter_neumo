@@ -3,20 +3,21 @@ import 'package:example/lib/ThemeConfigurator.dart';
 import 'package:example/lib/color_selector.dart';
 import 'package:example/lib/top_bar.dart';
 import 'package:flutter_neumo/flutter_neumo.dart';
+import 'package:flutter/material.dart';
 
 class CheckboxWidgetPage extends StatefulWidget {
-  const CheckboxWidgetPage({Key key}) : super(key: key);
+  const CheckboxWidgetPage({super.key});
 
   @override
-  createState() => _WidgetPageState();
+  State<CheckboxWidgetPage> createState() => _WidgetPageState();
 }
 
 class _WidgetPageState extends State<CheckboxWidgetPage> {
   @override
   Widget build(BuildContext context) {
-    return NeumoTheme(
+    return const NeumoTheme(
       themeMode: ThemeMode.light,
-      theme: const NeumoThemeData(
+      theme: NeumoThemeData(
         lightSource: LightSource.topLeft,
         accentColor: NeumoColors.accent,
         depth: 4,
@@ -28,8 +29,10 @@ class _WidgetPageState extends State<CheckboxWidgetPage> {
 }
 
 class _Page extends StatefulWidget {
+  const _Page();
+
   @override
-  createState() => _PageState();
+  State<_Page> createState() => _PageState();
 }
 
 class _PageState extends State<_Page> {
@@ -38,7 +41,7 @@ class _PageState extends State<_Page> {
     return NeumoBackground(
       padding: const EdgeInsets.all(8),
       child: Scaffold(
-        appBar: TopBar(
+        appBar: const TopBar(
           title: "Checkbox",
           actions: <Widget>[
             ThemeConfigurator(),
@@ -51,7 +54,7 @@ class _PageState extends State<_Page> {
             mainAxisAlignment: MainAxisAlignment.start,
             mainAxisSize: MainAxisSize.max,
             children: [
-              _DefaultWidget(),
+              const _DefaultWidget(),
               _ColorWidget(),
               _EnabledDisabledWidget(),
               const SizedBox(height: 30),
@@ -64,8 +67,10 @@ class _PageState extends State<_Page> {
 }
 
 class _DefaultWidget extends StatefulWidget {
+  const _DefaultWidget();
+
   @override
-  createState() => _DefaultWidgetState();
+  State<_DefaultWidget> createState() => _DefaultWidgetState();
 }
 
 class _DefaultWidgetState extends State<_DefaultWidget> {
@@ -75,7 +80,6 @@ class _DefaultWidgetState extends State<_DefaultWidget> {
 
   Widget _buildCode(BuildContext context) {
     return const Code("""
-
 bool isChecked = false;
 
 NeumoCheckbox(

@@ -5,7 +5,7 @@ import 'package:example/lib/top_bar.dart';
 import 'package:flutter_neumo/flutter_neumo.dart';
 
 class ButtonWidgetPage extends StatefulWidget {
-  const ButtonWidgetPage({Key key}) : super(key: key);
+  const ButtonWidgetPage({super.key});
 
   @override
   createState() => _WidgetPageState();
@@ -38,7 +38,7 @@ class _PageState extends State<_Page> {
     return NeumoBackground(
       padding: const EdgeInsets.all(8),
       child: Scaffold(
-        appBar: TopBar(
+        appBar: const TopBar(
           title: "Button",
           actions: <Widget>[
             ThemeConfigurator(),
@@ -393,7 +393,7 @@ NeumoButton(
               NeumoButton(
                 onPressed: () {},
                 duration: const Duration(seconds: 1),
-                child: Text("Press me all night long"),
+                child: const Text("Press me all night long"),
               ),
               const SizedBox(width: 12),
             ],

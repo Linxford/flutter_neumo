@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:example/lib/top_bar.dart';
 import 'package:example/widgets/appbar/widget_app_bar.dart';
 import 'package:example/widgets/toggle/widget_toggle.dart';
@@ -19,7 +21,7 @@ import 'switch/widget_switch.dart';
 class WidgetsHome extends StatelessWidget {
   const WidgetsHome({super.key});
 
-  Widget _buildButton({String text, VoidCallback onClick}) {
+  Widget _buildButton({required String text, required VoidCallback onClick}) {
     return NeumoButton(
       margin: const EdgeInsets.only(bottom: 12),
       padding: const EdgeInsets.symmetric(
@@ -39,20 +41,20 @@ class WidgetsHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const NeumoTheme(
-      theme: NeumoThemeData(depth: 8),
+    return NeumoTheme(
+      theme: const NeumoThemeData(depth: 8),
       child: Scaffold(
         backgroundColor: NeumoColors.background,
         body: SafeArea(
           child: SingleChildScrollView(
             child: Padding(
-              padding: EdgeInsets.all(18.0),
+              padding: const EdgeInsets.all(18.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisAlignment: MainAxisAlignment.start,
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  TopBar(title: "Widgets"),
+                  const TopBar(title: "Widgets"),
                   _buildButton(
                       text: "Container",
                       onClick: () {
@@ -106,7 +108,7 @@ class WidgetsHome extends StatelessWidget {
                       onClick: () {
                         Navigator.of(context)
                             .push(MaterialPageRoute(builder: (context) {
-                          return SwitchWidgetPage();
+                          return const SwitchWidgetPage();
                         }));
                       }),
                   _buildButton(
@@ -114,7 +116,7 @@ class WidgetsHome extends StatelessWidget {
                       onClick: () {
                         Navigator.of(context)
                             .push(MaterialPageRoute(builder: (context) {
-                          return ToggleWidgetPage();
+                          return const ToggleWidgetPage();
                         }));
                       }),
                   _buildButton(

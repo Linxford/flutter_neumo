@@ -5,7 +5,7 @@ import 'package:example/lib/top_bar.dart';
 import 'package:flutter_neumo/flutter_neumo.dart';
 
 class RangeSliderWidgetPage extends StatefulWidget {
-  const RangeSliderWidgetPage({Key key}) : super(key: key);
+  const RangeSliderWidgetPage({super.key});
 
   @override
   createState() => _RangeWidgetPageState();
@@ -38,7 +38,7 @@ class _PageState extends State<_Page> {
     return NeumoBackground(
       padding: const EdgeInsets.all(8),
       child: Scaffold(
-        appBar: TopBar(
+        appBar: const TopBar(
           title: "Range Slider",
           actions: <Widget>[
             ThemeConfigurator(),

@@ -2,11 +2,11 @@ import 'package:example/lib/Code.dart';
 import 'package:example/lib/color_selector.dart';
 import 'package:example/lib/top_bar.dart';
 import 'package:flutter_neumo/flutter_neumo.dart';
-
+import 'package:flutter/material.dart';
 import 'dart:math' show Random;
 
 class ProgressWidgetPage extends StatefulWidget {
-  const ProgressWidgetPage({Key key}) : super(key: key);
+  const ProgressWidgetPage({super.key});
 
   @override
   createState() => _WidgetPageState();
@@ -36,10 +36,10 @@ class _Page extends StatefulWidget {
 class _PageState extends State<_Page> {
   @override
   Widget build(BuildContext context) {
-    return const NeumoBackground(
-      padding: EdgeInsets.all(8),
+    return NeumoBackground(
+      padding: const EdgeInsets.all(8),
       child: Scaffold(
-        appBar: TopBar(
+        appBar: const TopBar(
           title: "Progress",
         ),
         backgroundColor: Colors.transparent,
@@ -54,7 +54,7 @@ class _PageState extends State<_Page> {
               _SizedWidget(),
               _DurationWidget(),
               _CurveWidget(),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
             ],
           ),
         ),
@@ -110,7 +110,7 @@ Expanded(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
         _buildWidget(context),
-        FlatButton(
+        TextButton(
             child: const Text('Update'),
             onPressed: () {
               setState(() {
@@ -324,7 +324,7 @@ Expanded(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
         _buildWidget(context),
-        FlatButton(
+        TextButton(
             child: const Text('Update'),
             onPressed: () {
               setState(() {
@@ -386,7 +386,7 @@ Expanded(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
         _buildWidget(context),
-        FlatButton(
+        TextButton(
             child: const Text('Update'),
             onPressed: () {
               setState(() {

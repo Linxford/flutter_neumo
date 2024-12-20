@@ -1,5 +1,7 @@
 import 'package:flutter_neumo/flutter_neumo.dart';
 
+import 'samples/sample_home.dart';
+
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -28,7 +30,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key key}) : super(key: key);
+  const MyHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +80,7 @@ class MyHomePage extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context)
                       .pushReplacement(MaterialPageRoute(builder: (context) {
-                    return FullSampleHomePage();
+                    return const SamplesHome();
                   }));
                 },
                 style: NeumoStyle(
@@ -99,10 +101,10 @@ class MyHomePage extends StatelessWidget {
 
   Color _iconsColor(BuildContext context) {
     final theme = NeumoTheme.of(context);
-    if (theme.isUsingDark) {
-      return theme.current.accentColor;
+    if (theme?.isUsingDark ?? false) {
+      return theme?.current?.accentColor ?? Colors.white;
     } else {
-      return null;
+      return Colors.black;
     }
   }
 

@@ -5,7 +5,7 @@ import 'package:example/lib/top_bar.dart';
 import 'package:flutter_neumo/flutter_neumo.dart';
 
 class SwitchWidgetPage extends StatefulWidget {
-  const SwitchWidgetPage({Key key}) : super(key: key);
+  const SwitchWidgetPage({super.key});
 
   @override
   createState() => _WidgetPageState();
@@ -38,7 +38,7 @@ class _PageState extends State<_Page> {
     return NeumoBackground(
       padding: const EdgeInsets.all(8),
       child: Scaffold(
-        appBar: TopBar(
+        appBar: const TopBar(
           title: "Switch",
           actions: <Widget>[
             ThemeConfigurator(),
@@ -53,7 +53,7 @@ class _PageState extends State<_Page> {
             children: [
               _DefaultWidget(),
               _ColorizableWidget(),
-              ColorizableThumbSwitch(),
+              const ColorizableThumbSwitch(),
               _FlatConcaveConvexWidget(),
               _EnabledDisabledWidget(),
               const SizedBox(height: 30),
@@ -109,7 +109,7 @@ NeumoSwitch(
             },
           ),
           const SizedBox(width: 12),
-          FlatButton(
+          ElevatedButton(
               onPressed: () {
                 setState(() {
                   isEnabled = !isEnabled;

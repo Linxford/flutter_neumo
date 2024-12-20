@@ -36,7 +36,7 @@ class __PageState extends State<_Page> {
   String firstName = "";
   String lastName = "";
   double age = 12;
-  Gender gender;
+  Gender gender = Gender.MALE; // Initialize with default value
   Set<String> rides = {};
 
   @override
@@ -48,7 +48,7 @@ class __PageState extends State<_Page> {
           children: <Widget>[
             Container(
               margin: const EdgeInsets.only(left: 12, right: 12, top: 10),
-              child: TopBar(
+              child: const TopBar(
                 actions: <Widget>[
                   ThemeConfigurator(),
                 ],
@@ -181,7 +181,7 @@ class _AgeField extends StatelessWidget {
   final double age;
   final ValueChanged<double> onChanged;
 
-  const _AgeField({@required this.age, this.onChanged});
+  const _AgeField({required this.age, required this.onChanged});
 
   @override
   Widget build(BuildContext context) {
@@ -227,17 +227,20 @@ class _AgeField extends StatelessWidget {
 class _TextField extends StatefulWidget {
   final String label;
   final String hint;
-
   final ValueChanged<String> onChanged;
 
-  const _TextField({@required this.label, @required this.hint, this.onChanged});
+  const _TextField({
+    required this.label,
+    required this.hint,
+    required this.onChanged,
+  });
 
   @override
   __TextFieldState createState() => __TextFieldState();
 }
 
 class __TextFieldState extends State<_TextField> {
-  TextEditingController _controller;
+  late TextEditingController _controller;
 
   @override
   void initState() {
@@ -283,8 +286,8 @@ class _GenderField extends StatelessWidget {
   final ValueChanged<Gender> onChanged;
 
   const _GenderField({
-    @required this.gender,
-    @required this.onChanged,
+    required this.gender,
+    required this.onChanged,
   });
 
   @override
@@ -313,7 +316,7 @@ class _GenderField extends StatelessWidget {
               ),
               value: Gender.MALE,
               child: const Icon(Icons.account_box),
-              onChanged: (value) => onChanged(value),
+              onChanged: (value) => onChanged(value ?? Gender.MALE),
             ),
             const SizedBox(width: 12),
             NeumoRadio(
@@ -324,7 +327,7 @@ class _GenderField extends StatelessWidget {
               ),
               value: Gender.FEMALE,
               child: const Icon(Icons.pregnant_woman),
-              onChanged: (value) => onChanged(value),
+              onChanged: (value) => onChanged(value ?? Gender.FEMALE),
             ),
             const SizedBox(width: 12),
             NeumoRadio(
@@ -335,7 +338,7 @@ class _GenderField extends StatelessWidget {
               ),
               value: Gender.NON_BINARY,
               child: const Icon(Icons.supervised_user_circle),
-              onChanged: (value) => onChanged(value),
+              onChanged: (value) => onChanged(value ?? Gender.NON_BINARY),
             ),
             const SizedBox(
               width: 18,

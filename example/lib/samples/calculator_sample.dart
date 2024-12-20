@@ -7,7 +7,7 @@ class CalculatorSample extends StatefulWidget {
   createState() => _CalculatorSampleState();
 }
 
-final Color _calcTextColor = const Color(0xFF484848);
+const Color _calcTextColor = Color(0xFF484848);
 
 class _CalculatorSampleState extends State<CalculatorSample> {
   @override
@@ -66,7 +66,9 @@ class WidgetCalcButton extends StatelessWidget {
   }
 
   Color _backgroundColor(BuildContext context) {
-    return button.backgroundAccent ? NeumoTheme.accentColor(context) : null;
+    return button.backgroundAccent
+        ? NeumoTheme.accentColor(context)
+        : NeumoTheme.baseColor(context);
   }
 
   @override
@@ -98,12 +100,12 @@ class _TopScreenWidget extends StatelessWidget {
     return Neumo(
       style: NeumoStyle(
         boxShape: NeumoBoxShape.roundRect(BorderRadius.circular(12)),
-        depth: -1 * NeumoTheme.of(context).current.depth,
+        depth: -1 * (NeumoTheme.of(context)?.current?.depth ?? 0),
       ),
-      child: FractionallySizedBox(
+      child: const FractionallySizedBox(
         widthFactor: 1,
         child: Padding(
-          padding: const EdgeInsets.all(18.0),
+          padding: EdgeInsets.all(18.0),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.end,
@@ -197,11 +199,11 @@ class __PageContentState extends State<_PageContent> {
           ),
           Row(
             children: <Widget>[
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () {
                   setState(() {
                     NeumoTheme.of(context)
-                        .updateCurrentTheme(const NeumoThemeData(
+                        ?.updateCurrentTheme(const NeumoThemeData(
                       depth: 1,
                       intensity: 0.5,
                       accentColor: Colors.cyan,
@@ -212,11 +214,11 @@ class __PageContentState extends State<_PageContent> {
                   "style 1",
                 ),
               ),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () {
                   setState(() {
                     NeumoTheme.of(context)
-                        .updateCurrentTheme(const NeumoThemeData(
+                        ?.updateCurrentTheme(const NeumoThemeData(
                       depth: 8,
                       intensity: 0.3,
                       accentColor: Colors.greenAccent,

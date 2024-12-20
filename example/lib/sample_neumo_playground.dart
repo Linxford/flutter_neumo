@@ -1,7 +1,7 @@
 import 'package:example/lib/color_selector.dart';
 import 'package:flutter_neumo/flutter_neumo.dart';
 
-void main() => runApp(NeumoPlayground());
+void main() => runApp(const NeumoPlayground());
 
 class NeumoPlayground extends StatefulWidget {
   const NeumoPlayground({super.key});
@@ -85,7 +85,7 @@ class __PageState extends State<_Page> {
   }
 
   Widget _configurators() {
-    final Color buttonActiveColor = Theme.of(context).accentColor;
+    final Color buttonActiveColor = Theme.of(context).colorScheme.primary;
     const Color buttonInnactiveColor = Colors.white;
 
     const Color textActiveColor = Colors.white;
@@ -246,7 +246,7 @@ class __PageState extends State<_Page> {
   }
 
   Widget shapeWidget() {
-    final Color buttonActiveColor = Theme.of(context).accentColor;
+    final Color buttonActiveColor = Theme.of(context).colorScheme.primary;
     const Color buttonInnactiveColor = Colors.white;
 
     const Color iconActiveColor = Colors.white;
@@ -258,17 +258,15 @@ class __PageState extends State<_Page> {
         Expanded(
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: RaisedButton(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12)),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12))),
               onPressed: () {
                 setState(() {
                   shape = NeumoShape.concave;
                 });
               },
-              color: shape == NeumoShape.concave
-                  ? buttonActiveColor
-                  : buttonInnactiveColor,
               child: Image.asset("assets/images/concave.png",
                   color: shape == NeumoShape.concave
                       ? iconActiveColor
@@ -279,17 +277,15 @@ class __PageState extends State<_Page> {
         Expanded(
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: RaisedButton(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12)),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12))),
               onPressed: () {
                 setState(() {
                   shape = NeumoShape.convex;
                 });
               },
-              color: shape == NeumoShape.convex
-                  ? buttonActiveColor
-                  : buttonInnactiveColor,
               child: Image.asset("assets/images/convex.png",
                   color: shape == NeumoShape.convex
                       ? iconActiveColor
@@ -300,17 +296,15 @@ class __PageState extends State<_Page> {
         Expanded(
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: RaisedButton(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12)),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12))),
               onPressed: () {
                 setState(() {
                   shape = NeumoShape.flat;
                 });
               },
-              color: shape == NeumoShape.flat
-                  ? buttonActiveColor
-                  : buttonInnactiveColor,
               child: Image.asset("assets/images/flat.png",
                   color: shape == NeumoShape.flat
                       ? iconActiveColor

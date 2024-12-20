@@ -1,13 +1,9 @@
 name: flutter_neumo
 description: A complete, ready to use, Neumorphic ui kit for Flutter. Dark theming compatible & fully customizable.
 version: 1.0.1
-#authors: [
-#  Linxford <linxfordkwabena@gmail.com>, current maintainer
-#  Idean <idean@me.com>, original author
-#  Florent Champigny <champigny.florent@gmail.com>,
-#  Olivier Bonvila <olivier.bonvila@idean.com>,
-#  Gyl Jean Lambert <almighty972@gmail.com>
-#]
+authors: [
+  Linxford <linxfordkwabena@gmail.com>, current maintainer
+]
 homepage: https://github.com/linxford/Flutter_Neumo
 issue_tracker: https://github.com/linxford/Flutter_Neumo/issues
 

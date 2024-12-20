@@ -2,12 +2,12 @@ import 'package:example/lib/Code.dart';
 import 'package:example/lib/ThemeConfigurator.dart';
 import 'package:example/lib/color_selector.dart';
 import 'package:example/lib/top_bar.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_neumo/flutter_neumo.dart';
-
 import 'dart:math' show Random;
 
 class IndicatorWidgetPage extends StatefulWidget {
-  const IndicatorWidgetPage({Key key}) : super(key: key);
+  const IndicatorWidgetPage({super.key});
 
   @override
   createState() => _WidgetPageState();
@@ -40,7 +40,7 @@ class _PageState extends State<_Page> {
     return NeumoBackground(
       padding: const EdgeInsets.all(8),
       child: Scaffold(
-        appBar: TopBar(
+        appBar: const TopBar(
           title: "Indicator",
           actions: <Widget>[
             ThemeConfigurator(),
@@ -101,7 +101,7 @@ NeumoIndicator(
             percent: percent,
           ),
           const SizedBox(width: 12),
-          FlatButton(
+          TextButton(
               child: const Text('Update'),
               onPressed: () {
                 setState(() {
@@ -299,7 +299,7 @@ NeumoIndicator(
             duration: const Duration(seconds: 1),
           ),
           const SizedBox(width: 12),
-          FlatButton(
+          TextButton(
               child: const Text('Update'),
               onPressed: () {
                 setState(() {
@@ -358,7 +358,7 @@ NeumoIndicator(
               percent: percent,
               curve: Curves.bounceOut),
           const SizedBox(width: 12),
-          FlatButton(
+          TextButton(
               child: const Text('Update'),
               onPressed: () {
                 setState(() {

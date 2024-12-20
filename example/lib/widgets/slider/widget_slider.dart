@@ -5,7 +5,7 @@ import 'package:example/lib/top_bar.dart';
 import 'package:flutter_neumo/flutter_neumo.dart';
 
 class SliderWidgetPage extends StatefulWidget {
-  const SliderWidgetPage({Key key}) : super(key: key);
+  const SliderWidgetPage({super.key});
 
   @override
   createState() => _WidgetPageState();
@@ -38,7 +38,7 @@ class _PageState extends State<_Page> {
     return NeumoBackground(
       padding: const EdgeInsets.all(8),
       child: Scaffold(
-        appBar: TopBar(
+        appBar: const TopBar(
           title: "Slider",
           actions: <Widget>[
             ThemeConfigurator(),

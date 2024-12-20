@@ -56,16 +56,16 @@ class _ClockPageState extends State<_Page> {
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
+    return SafeArea(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Padding(
+          const Padding(
             padding: EdgeInsets.only(left: 8.0, right: 8.0, top: 9.0),
             child: TopBar(),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.0),
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Stack(
               children: <Widget>[
                 Align(
@@ -75,7 +75,7 @@ class _ClockPageState extends State<_Page> {
                     style: TextStyle(
                       fontWeight: FontWeight.w700,
                       fontSize: 28,
-                      shadows: [
+                      shadows: const [
                         Shadow(
                             color: Colors.black38,
                             offset: Offset(1.0, 1.0),
@@ -95,13 +95,13 @@ class _ClockPageState extends State<_Page> {
                           NeumoBoxShape.roundRect(BorderRadius.circular(8)),
                     ),
                     child: NeumoButton(
-                      padding: EdgeInsets.all(12.0),
+                      padding: const EdgeInsets.all(12.0),
                       style: NeumoStyle(
                         depth: -1,
                         boxShape:
                             NeumoBoxShape.roundRect(BorderRadius.circular(8)),
                       ),
-                      child: Icon(
+                      child: const Icon(
                         Icons.add,
                         color: Color(0xFFC1CDE5),
                       ),
@@ -111,10 +111,10 @@ class _ClockPageState extends State<_Page> {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
-          _Divider(),
+          const _Divider(),
           Expanded(
             child: ListView.builder(
               itemBuilder: (context, index) {
@@ -200,13 +200,15 @@ class AlarmCell extends StatelessWidget {
             ],
           ),
         ),
-        _Divider(),
+        const _Divider(),
       ],
     );
   }
 }
 
 class _Divider extends StatelessWidget {
+  const _Divider();
+
   @override
   Widget build(BuildContext context) {
     return const FractionallySizedBox(
@@ -231,8 +233,8 @@ class Alarm {
   final String label;
 
   const Alarm({
-    @required this.enabled,
-    @required this.time,
-    @required this.label,
+    required this.enabled,
+    required this.time,
+    required this.label,
   });
 }

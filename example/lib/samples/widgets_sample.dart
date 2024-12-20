@@ -1,14 +1,14 @@
 import 'package:flutter_neumo/flutter_neumo.dart';
 
 class WidgetsSample extends StatefulWidget {
-  const WidgetsSample({Key key}) : super(key: key);
+  const WidgetsSample({super.key});
 
   @override
   createState() => _ContainersListPageState();
 }
 
 class _ContainersListPageState extends State<WidgetsSample> {
-  int _groupValue;
+  int _groupValue = 0;
   bool _switchConcaveEnabled = false;
   bool _switchConvexEnabled = false;
   bool _switchFlatEnabled = false;
@@ -114,7 +114,7 @@ class _ContainersListPageState extends State<WidgetsSample> {
           groupValue: _groupValue,
           onChanged: (value) {
             setState(() {
-              _groupValue = value;
+              _groupValue = value ?? 0;
             });
           },
           child: SizedBox(
@@ -134,7 +134,7 @@ class _ContainersListPageState extends State<WidgetsSample> {
           groupValue: _groupValue,
           onChanged: (value) {
             setState(() {
-              _groupValue = value;
+              _groupValue = value ?? 0;
             });
           },
           child: SizedBox(
@@ -154,7 +154,7 @@ class _ContainersListPageState extends State<WidgetsSample> {
           groupValue: _groupValue,
           onChanged: (value) {
             setState(() {
-              _groupValue = value;
+              _groupValue = value ?? 0;
             });
           },
           child: SizedBox(
@@ -216,7 +216,7 @@ class _ContainersListPageState extends State<WidgetsSample> {
 
   Widget _buildIndicators() {
     const width = 14.0;
-    return SizedBox(
+    return const SizedBox(
       height: 130,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -225,37 +225,37 @@ class _ContainersListPageState extends State<WidgetsSample> {
             width: width,
             percent: 0.4,
           ),
-          const SizedBox(width: 10),
+          SizedBox(width: 10),
           NeumoIndicator(
             width: width,
             percent: 0.2,
           ),
-          const SizedBox(width: 10),
+          SizedBox(width: 10),
           NeumoIndicator(
             width: width,
             percent: 0.5,
           ),
-          const SizedBox(width: 10),
+          SizedBox(width: 10),
           NeumoIndicator(
             width: width,
             percent: 1,
           ),
-          const SizedBox(width: 10),
+          SizedBox(width: 10),
           NeumoIndicator(
             width: width,
             percent: 0.4,
           ),
-          const SizedBox(width: 10),
+          SizedBox(width: 10),
           NeumoIndicator(
             width: width,
             percent: 0.2,
           ),
-          const SizedBox(width: 10),
+          SizedBox(width: 10),
           NeumoIndicator(
             width: width,
             percent: 0.5,
           ),
-          const SizedBox(width: 10),
+          SizedBox(width: 10),
           NeumoIndicator(
             width: width,
             percent: 1,
@@ -377,10 +377,10 @@ class _ContainersListPageState extends State<WidgetsSample> {
                       Neumo(
                         style: const NeumoStyle(depth: -8),
                         child: AppBar(
-                          iconTheme: IconThemeData.fallback(),
+                          iconTheme: const IconThemeData.fallback(),
                           backgroundColor: Colors.transparent,
                           elevation: 0,
-                          title: Text(
+                          title: const Text(
                             "Widgets",
                             style: TextStyle(color: Colors.black),
                           ),
