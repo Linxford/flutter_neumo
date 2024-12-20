@@ -46,7 +46,7 @@ class TipsHome extends StatelessWidget {
                       onClick: () {
                         Navigator.of(context)
                             .push(MaterialPageRoute(builder: (context) {
-                          return  TipsBorderPage();
+                          return TipsBorderPage();
                         }));
                       }),
                   _buildButton(

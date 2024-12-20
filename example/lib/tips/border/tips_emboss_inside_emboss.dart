@@ -87,7 +87,9 @@ class _EmbossmbossWidgetState extends State<_EmbossmbossWidget> {
   }
 
   Widget _generateEmbosss(
-      {required int number, required Widget child, bool reverseEachPair = false}) {
+      {required int number,
+      required Widget child,
+      bool reverseEachPair = false}) {
     Widget element = child;
     for (int i = 0; i < number; ++i) {
       element = Neumo(

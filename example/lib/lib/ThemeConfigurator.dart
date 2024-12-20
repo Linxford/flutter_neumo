@@ -87,9 +87,10 @@ class _ThemeConfiguratorState extends State<_ThemeConfiguratorDialog> {
               setState(() {
                 NeumoTheme.update(
                   widget.contextContainingTheme,
-                  (current) => current?.copyWith(
-                    intensity: value,
-                  ) ??
+                  (current) =>
+                      current?.copyWith(
+                        intensity: value,
+                      ) ??
                       const NeumoThemeData(),
                 );
               });
@@ -125,8 +126,8 @@ class _ThemeConfiguratorState extends State<_ThemeConfiguratorDialog> {
               setState(() {
                 NeumoTheme.update(
                   widget.contextContainingTheme,
-                  (current) => current?.copyWith(depth: value) ??
-                      const NeumoThemeData(),
+                  (current) =>
+                      current?.copyWith(depth: value) ?? const NeumoThemeData(),
                 );
               });
             },
